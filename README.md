@@ -1,54 +1,54 @@
+<h1 align="center"> 💸 FS Design CFP 💸</h1>
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+  <a href="#about-the-project">Live Website</a> •
+  <a href="#usage">Code Snippets</a> •
+  <a href="#usage">Flight CFP Repo</a>
 </p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+<p align='center'>Enhancing interaction, usability and tangibility in design prototyping. Improving the experience of Concept Testing and or Usability Testing.</p>
 
-## 🚀 Quick start
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-1.  **Create a Gatsby site.**
+## 🖥️ Technology Used
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+#### Example
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- Gatsby
+- SASS
+- Hotjar
 
-2.  **Start developing.**
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-    Navigate into your new site’s directory and start it up.
+## ⚒️ Project Infrastructure
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+#### Example
 
-3.  **Open the code and start customizing!**
+- Example List
+- Example List
 
-    Your site is now running at http://localhost:8000!
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+##🚴‍♂️ Getting Started
 
-4.  **Learn more**
+**1. Setup your NPM**
+Lorem Ipsum Dolor Si Amet
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+Code Block Example
+```
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+<br>
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+**2. Setup Your NPM**
+Lorem Ipsum Dolor Si Amet
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+Code Block Example
+```
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+<h2 id="credits"> 📜 Credits</h2>
 
-## 🚀 Quick start (Gatsby Cloud)
+Created by **Ackyl** with love 💕
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ackyl)

@@ -1,6 +1,4 @@
-```
-import CloseIcon from "@images/icons/close.svg";
-```
+### Using and Saving Global Context
 
 ```
 const { kyc, saveKyc } = useContext(KycContext);

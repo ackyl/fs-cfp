@@ -1,27 +1,21 @@
+// Main Imports
 import React, { useContext } from "react";
-import Layout from "@components/Layout";
-import { KycContext } from "@src/kyc-context";
-import { Link } from "gatsby";
 
-import CloseIcon from "@images/icons/close.svg";
+// Component Imports
+import Layout from "@components/base/Layout";
+import Button from "@components/base/Button";
+
+// Image Imports
+import WelcomeImage from "@images/welcome.svg";
 
 const IndexPage = () => {
-  const { kyc, saveKyc } = useContext(KycContext);
-
   return (
     <Layout>
-      <p className="text-hero"> {kyc.username} </p>
-      <button
-        onClick={() =>
-          saveKyc({
-            username: "gg",
-          })
-        }
-      >
-        Click here
-      </button>
-      <Link to="kyc/onboarding">Take me to another page</Link>
-      <img src={CloseIcon} width="40px" height="40px"></img>
+      <div className="home__center">
+        <p className="text-title1">Welcome to FS CFP</p>
+        <img src={WelcomeImage}></img>
+        <Button toPage="kyc/onboarding">KYC Process</Button>
+      </div>
     </Layout>
   );
 };

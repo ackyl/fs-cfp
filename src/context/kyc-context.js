@@ -1,3 +1,4 @@
+// Main Imports
 import React, { createContext, useState } from "react";
 
 // Initially create the context so it knows what kind of variable inside

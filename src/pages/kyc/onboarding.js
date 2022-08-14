@@ -1,8 +1,22 @@
+// Main Imports
 import React from "react";
-import Layout from "@components/Layout";
+
+// Component Imports
+import Layout from "@components/base/Layout";
+import NavBar from "@components/patterns/NavBar";
+
+// Image Imports
+import Image from "@images/kycOnboarding.png";
 
 const Onboarding = () => {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <NavBar>Apply for Gold</NavBar>
+      <div class="onboarding">
+        <img src={Image}></img>
+      </div>
+    </Layout>
+  );
 };
 
 export default Onboarding;

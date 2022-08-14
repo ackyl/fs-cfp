@@ -7,12 +7,7 @@ import BackIcon from "@images/icons/back.svg";
 import CloseIcon from "@images/icons/close.svg";
 import LockIcon from "@images/icons/lock.svg";
 
-// Context
-// isNotice -> to show additional notice div
-// isBack -> to show back button on the left
-// isClose -> to show close button on the right
-// backUrl -> to provide link to back
-
+// Main Render
 const NavBar = ({ isNotice, isBack, isClose, backUrl, children }) => {
   const showClose = isClose ? isClose : "true";
 
@@ -44,3 +39,11 @@ const NavBar = ({ isNotice, isBack, isClose, backUrl, children }) => {
 };
 
 export default NavBar;
+
+// Context
+/*
+  isNotice -> to show additional notice div
+  isBack -> to show back button on the left
+  isClose -> to show close button on the right
+  backUrl -> to provide link to back
+*/

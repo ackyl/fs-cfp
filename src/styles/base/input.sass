@@ -1,0 +1,54 @@
+.input
+  position: relative
+  padding-top: 13px
+  width: 100%
+
+  & input
+    border: 0
+    border-bottom: 2px solid $uiDarkSecondary
+    outline: none
+    min-width: 180px
+    font-size: 16px
+    transition: all .3s ease-out
+    -webkit-transition: all .3s ease-out
+    -moz-transition: all .3s ease-out
+    -webkit-appearance: none
+    border-radius: 0
+    background-color: transparent
+    width: 100%
+    padding: 8px 0
+
+  & input:focus
+    border-bottom: 2px solid $uiBluePrimary
+
+  & input:not(:placeholder-shown)
+    border-bottom: 2px solid $uiDarkSecondary
+
+  & input::placeholder
+    color: transparent
+
+  & label
+    pointer-events: none
+    position: absolute
+    top: 0
+    left: 0
+    margin-top: 20px
+    transition: all .3s ease-out
+    -webkit-transition: all .3s ease-out
+    -moz-transition: all .3s ease-out
+    color: $uiDarkSecondary
+    font-weight: 400
+
+  & input:required:invalid + label
+    color: red
+
+  & input:focus:required:invalid
+    border-bottom: 2px solid red
+
+  & input:required:invalid + label:before
+    content: '*'
+
+.input input:focus + label,
+.input input:not(:placeholder-shown) + label
+  font-size: 13px
+  margin-top: 0

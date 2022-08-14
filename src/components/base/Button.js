@@ -2,9 +2,9 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const Button = ({ toPage, type, children }) => {
+// Main Render
+const Button = ({ toPage, type, children, className, onClick }) => {
   var buttonType = "button-primary";
-  console.log(type);
 
   switch (type) {
     case "primary":
@@ -22,12 +22,20 @@ const Button = ({ toPage, type, children }) => {
 
   if (toPage) {
     return (
-      <Link className={`button ${buttonType}`} to={toPage}>
+      <Link
+        className={`button ${buttonType} ${className}`}
+        to={toPage}
+        onClick={onClick}
+      >
         {children}
       </Link>
     );
   } else {
-    return <button className="button">{children}</button>;
+    return (
+      <button className={`button ${buttonType} ${className}`} onClick={onClick}>
+        {children}
+      </button>
+    );
   }
 };
 

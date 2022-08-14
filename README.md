@@ -27,7 +27,7 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-##🚴‍♂️ Getting Started
+## 🚴‍♂️ Getting Started
 
 **1. Setup your NPM**
 Lorem Ipsum Dolor Si Amet

@@ -9,7 +9,7 @@ export const KycContext = createContext({
 // Provide simple ways to update the context, default value is provided here
 const Provider = (props) => {
   const [kyc, saveKyc] = useState({
-    username: "",
+    username: "dimasackyl",
   });
 
   return (

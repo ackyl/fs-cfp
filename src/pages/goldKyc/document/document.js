@@ -23,7 +23,10 @@ const Document = ({ location }) => {
   const selfiePhoto = location.state ? location.state.selfiePhoto : null;
 
   // Clear page state
-  window.history.replaceState(null, "");
+  const isBrowser = typeof window !== "undefined";
+  if (isBrowser) {
+    window.history.replaceState(null, "");
+  }
 
   return (
     <Layout>

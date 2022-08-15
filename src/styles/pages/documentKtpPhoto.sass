@@ -1,0 +1,28 @@
+.documentKtpPhoto
+  position: relative
+  width: 100%
+  height: calc(100vh - 59px)
+  background-color: black
+  padding: 16px
+  img
+    width: 100%
+  &__row
+    display: flex
+    margin-top: 8px
+    img
+      margin-top: 4px
+      height: 16px
+      width: 16px
+      margin-right: 8px
+    p
+      color: $uiLightPrimary
+  &__row:first-child
+    margin-top: 24px
+
+.pictureButton
+  width: 80px
+  height: 80px
+  position: absolute
+  bottom: 16px
+  left: 50%
+  transform: translate(-50%, 0)

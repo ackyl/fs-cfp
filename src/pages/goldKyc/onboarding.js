@@ -16,7 +16,10 @@ import PhoneIcon from "@images/icons/phone.svg";
 const Onboarding = () => {
   return (
     <Layout>
+      {/* NavBar */}
       <NavBar>Apply for Gold</NavBar>
+
+      {/* Content */}
       <div className="onboarding">
         <img src={Image}></img>
         <p className="text-uiLarge onboarding__heading">
@@ -38,8 +41,10 @@ const Onboarding = () => {
           <p className="text-uiSmall">Confirm your phone number</p>
         </div>
       </div>
+
+      {/* CTA Button */}
       <div className="onboarding__footer">
-        <Button toPage="../formKtp" type="cta">
+        <Button toPage="../verifyKtp" type="cta">
           Get Started
         </Button>
       </div>

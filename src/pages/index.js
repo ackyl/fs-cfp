@@ -15,7 +15,7 @@ const IndexPage = () => {
       <div className="home__center">
         <p className="text-title1 extra">FS Design CFP</p>
         <img src={WelcomeImage}></img>
-        <Button toPage="kyc/onboarding">KYC Process</Button>
+        <Button toPage="goldKyc/onboarding">KYC Process</Button>
       </div>
     </Layout>
   );

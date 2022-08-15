@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 // Main Render
-const Button = ({ toPage, type, children, className, onClick }) => {
+const Button = ({ toPage, type, children, className, state, onClick }) => {
   var buttonType = "button-primary";
 
   switch (type) {
@@ -26,6 +26,7 @@ const Button = ({ toPage, type, children, className, onClick }) => {
         className={`button ${buttonType} ${className}`}
         to={toPage}
         onClick={onClick}
+        state={state}
       >
         {children}
       </Link>
@@ -40,3 +41,11 @@ const Button = ({ toPage, type, children, className, onClick }) => {
 };
 
 export default Button;
+
+// Context
+/* 
+
+  use state to pass props to another page
+  state = {{ ktpPhoto: true }}
+
+*/

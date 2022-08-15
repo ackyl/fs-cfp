@@ -1,3 +1,3 @@
-import Provider from "@context/kyc-context";
+import Provider from "@context/global-context";
 
 export const wrapRootElement = Provider;

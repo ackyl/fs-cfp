@@ -1,10 +1,10 @@
 <h1 align="center"> 💸 FS Design CFP 💸</h1>
 <p align="center">
-  <a href="#about-the-project">Live Website</a> •
+  <a href="https://iridescent-elf-9e2aaf.netlify.app/">Live Website</a> •
   <a href="#usage">Code Snippets</a> •
   <a href="#usage">Flight CFP Repo</a>
 </p>
-<p align='center'>Enhancing interaction, usability and tangibility in design prototyping. Improving the experience of Concept Testing and or Usability Testing.</p>
+<p align='center'>Web-based prototype to help user testing and or concept validation with the advantage of having more interaction capability, non-linear action, and data accurate form experience.</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -51,4 +51,4 @@ Code Block Example
 
 Created by **Ackyl** with love 💕
 
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ackyl)
+[![GitHub Badge](https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white)](https://dribbble.com/ackyl)

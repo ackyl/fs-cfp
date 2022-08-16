@@ -1,5 +1,5 @@
 // Main Imports
-import React, { createRef } from "react";
+import React, { createRef, useEffect } from "react";
 
 // Component Imports
 import Button from "@components/base/Button";
@@ -7,16 +7,29 @@ import CloseIcon from "@images/icons/closeDark.svg";
 
 // Main Render
 const Modal = ({ modal, setModal }) => {
-  const myRef = createRef();
+  const modalRef = createRef();
 
   const closeModal = (e) => {
-    myRef.current.classList.remove("active");
+    modalRef.current.classList.remove("active");
     setModal(false);
   };
 
+  // If user clicked outside of the modal
+  const onSelectingOutsideModal = (event) => {
+    if (modalRef.current == event.target) {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", onSelectingOutsideModal, true);
+    return () => {
+      document.removeEventListener("click", onSelectingOutsideModal, true);
+    };
+  }, [modalRef]);
+
   return (
-    <div className={`modal ${modal && "active"}`} ref={myRef}>
-      {/* <div className="modal__overlay"></div> */}
+    <div className={`modal ${modal && "active"}`} ref={modalRef}>
       <div className="modal__box">
         <div className="modal__box-header">
           <p className="text-title1">Leave this page?</p>

@@ -1,5 +1,6 @@
 // Main Imports
-import React, { useState, createRef } from "react";
+import React, { useState, createRef, useEffect } from "react";
+import ReactDom from "react-dom";
 
 // Component Imports
 import Button from "@components/base/Button";
@@ -9,7 +10,7 @@ import ChevronDown from "@images/icons/chevronDown.svg";
 import CloseIcon from "@images/icons/closeDark.svg";
 
 // Main Render
-const Dropdown = () => {
+const Dropdown = ({ options }) => {
   const [selectedRadio, setSelectedRadio] = useState("");
   const [selectedInput, setSelectedInput] = useState("");
   const popUpRef = createRef();
@@ -18,12 +19,12 @@ const Dropdown = () => {
     setSelectedRadio(option);
   };
 
-  const onShowPopup = () => {
+  const showPopup = () => {
     popUpRef.current.classList.add("active");
     document.body.style.overflow = "hidden";
   };
 
-  const onClosePopup = () => {
+  const closePopup = () => {
     popUpRef.current.classList.remove("active");
     document.body.style.overflow = "auto";
   };
@@ -31,16 +32,31 @@ const Dropdown = () => {
   const onDoneSelectingRadio = () => {
     if (selectedRadio) {
       setSelectedInput(selectedRadio);
-      onClosePopup();
+      closePopup();
     }
   };
 
-  const options = ["Single", "Married", "Widowed", "Divorced"];
+  // If user clicked outside of the dropdown
+  const onSelectingOutsidePopup = (event) => {
+    if (popUpRef.current == event.target) {
+      closePopup();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", onSelectingOutsidePopup, true);
+    return () => {
+      document.removeEventListener("click", onSelectingOutsidePopup, true);
+    };
+  }, [popUpRef]);
+
+  // Provide default value to prevent error
+  options = options ? options : [];
 
   return (
     <div className="dropdown">
       {/* Input */}
-      <div className="dropdown-input" onClick={() => onShowPopup()}>
+      <div className="dropdown-input" onClick={() => showPopup()}>
         <input
           id="1"
           type="text"
@@ -58,7 +74,7 @@ const Dropdown = () => {
           {/* Title */}
           <div className="dropdown-popup__title">
             <p className="text-title2">Marital Status</p>
-            <img src={CloseIcon} onClick={() => onClosePopup()}></img>
+            <img src={CloseIcon} onClick={() => closePopup()}></img>
           </div>
 
           {/* Radio */}
@@ -75,6 +91,7 @@ const Dropdown = () => {
                 id={option}
                 value={option}
                 checked={selectedRadio === option}
+                readOnly={true}
               />
               <label>{option}</label>
             </div>
@@ -82,7 +99,7 @@ const Dropdown = () => {
 
           {/* Button */}
           <div className="dropdown-popup__button">
-            <Button type="secondary" onClick={() => onClosePopup()}>
+            <Button type="secondary" onClick={() => closePopup()}>
               Cancel
             </Button>
             <Button

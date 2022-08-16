@@ -90,7 +90,7 @@ const Document = ({ location }) => {
           </div>
         )}
 
-        <Dropdown></Dropdown>
+        <Dropdown options={["Single", "Married", "Divorce"]}></Dropdown>
       </KycForm>
 
       {/* Modal */}

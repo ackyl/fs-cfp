@@ -8,10 +8,14 @@ import CloseIcon from "@images/icons/closeDark.svg";
 // Main Render
 const Modal = ({ modal, setModal }) => {
   const modalRef = createRef();
+  if (modal) {
+    document.body.style.overflow = "hidden";
+  }
 
   const closeModal = (e) => {
     modalRef.current.classList.remove("active");
     setModal(false);
+    document.body.style.overflow = "auto";
   };
 
   // If user clicked outside of the modal
@@ -42,7 +46,12 @@ const Modal = ({ modal, setModal }) => {
           have made.
         </p>
         <div className="modal__box-buttons">
-          <Button className="modal__box-button" type="warning" toPage="/">
+          <Button
+            className="modal__box-button"
+            type="warning"
+            toPage="/"
+            onClick={() => closeModal()}
+          >
             Leave
           </Button>
           <Button className="modal__box-button" onClick={() => closeModal()}>

@@ -6,8 +6,11 @@ export const GlobalContext = createContext({
   kyc: {
     ktpNumber: "",
     document: {
-      ktp: "",
-      selfie: "",
+      fullName: "",
+      gender: "",
+      religion: "",
+      birthPlace: "",
+      birthDate: "",
     },
     contact: {
       email: "",
@@ -22,8 +25,11 @@ const Provider = (props) => {
     kyc: {
       ktpNumber: "",
       document: {
-        ktp: "",
-        selfie: "",
+        fullName: "",
+        gender: "",
+        religion: "",
+        birthPlace: "",
+        birthDate: "",
       },
       contact: {
         email: "",

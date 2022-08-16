@@ -7,7 +7,6 @@ import Layout from "@components/base/Layout";
 import NavBar from "@components/patterns/NavBar";
 import KycForm from "@components/patterns/KycForm";
 import Modal from "@components/base/Modal";
-import Dropdown from "@components/base/Dropdown";
 
 // Context Import
 import { GlobalContext } from "@context/global-context";
@@ -73,7 +72,7 @@ const Document = ({ location }) => {
         {/* Selfie */}
         {ktpPhoto && (
           <div className="document">
-            <Link to="../documentKtpPhoto">
+            <Link>
               <p className="text-uiSmall">Selfie</p>
               <div className="document__row">
                 <img src={selfiePhoto ? SelfieImage : ThumbnailImage}></img>
@@ -89,8 +88,6 @@ const Document = ({ location }) => {
             </Link>
           </div>
         )}
-
-        <Dropdown options={["Single", "Married", "Divorce"]}></Dropdown>
       </KycForm>
 
       {/* Modal */}

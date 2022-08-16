@@ -49,7 +49,7 @@ const DocumentKtpPhoto = () => {
       </div>
 
       <Link
-        to="../document"
+        to="../documentReviewKtp"
         state={{
           ktpPhoto: true,
         }}

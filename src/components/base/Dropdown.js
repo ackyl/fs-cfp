@@ -10,7 +10,7 @@ import ChevronDown from "@images/icons/chevronDown.svg";
 import CloseIcon from "@images/icons/closeDark.svg";
 
 // Main Render
-const Dropdown = ({ options }) => {
+const Dropdown = ({ id, options, label, onDropdownSelected }) => {
   const [selectedRadio, setSelectedRadio] = useState("");
   const [selectedInput, setSelectedInput] = useState("");
   const popUpRef = createRef();
@@ -32,6 +32,9 @@ const Dropdown = ({ options }) => {
   const onDoneSelectingRadio = () => {
     if (selectedRadio) {
       setSelectedInput(selectedRadio);
+      if (onDropdownSelected) {
+        onDropdownSelected(id, selectedRadio);
+      }
       closePopup();
     }
   };
@@ -58,13 +61,13 @@ const Dropdown = ({ options }) => {
       {/* Input */}
       <div className="dropdown-input" onClick={() => showPopup()}>
         <input
-          id="1"
+          id={id}
           type="text"
           placeholder=" "
           value={selectedInput}
           readOnly={true}
         />
-        <label>Marital Status</label>
+        <label>{label}</label>
         <img src={ChevronDown}></img>
       </div>
 

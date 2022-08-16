@@ -11,7 +11,7 @@ const Layout = (props) => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
 
-  return <div className="layout">{props.children}</div>;
+  return <div className={`layout ${props.className}`}>{props.children}</div>;
 };
 
 export default Layout;

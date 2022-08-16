@@ -16,6 +16,12 @@ const Button = ({ toPage, type, children, className, state, onClick }) => {
     case "cta":
       buttonType = "button-cta";
       break;
+    case "warning":
+      buttonType = "button-warning";
+      break;
+    case "disabled":
+      buttonType = "button-disabled";
+      break;
     default:
       break;
   }

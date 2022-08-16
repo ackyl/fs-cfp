@@ -1,11 +1,13 @@
 // Main Imports
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "gatsby";
 
 // Component Imports
 import Layout from "@components/base/Layout";
 import NavBar from "@components/patterns/NavBar";
 import KycForm from "@components/patterns/KycForm";
+import Modal from "@components/base/Modal";
+import Dropdown from "@components/base/Dropdown";
 
 // Context Import
 import { GlobalContext } from "@context/global-context";
@@ -18,9 +20,11 @@ import SelfieImage from "@images/selfieDummy.png";
 // Main Render
 const Document = ({ location }) => {
   const { context, saveContext } = useContext(GlobalContext);
+  const [modal, setModal] = useState(false);
 
   const ktpPhoto = location.state ? location.state.ktpPhoto : null;
   const selfiePhoto = location.state ? location.state.selfiePhoto : null;
+  const disableButton = !(ktpPhoto && selfiePhoto);
 
   // Clear page state
   const isBrowser = typeof window !== "undefined";
@@ -28,15 +32,25 @@ const Document = ({ location }) => {
     window.history.replaceState(null, "");
   }
 
+  // Activate Modal
+  const showModal = () => {
+    setModal(true);
+  };
+
   return (
     <Layout>
       {/* NavBar */}
-      <NavBar isNotice={true} isBack={true} backUrl="../../verifyKtp">
+      <NavBar
+        isNotice={true}
+        isBack={true}
+        backUrl="../../verifyKtp"
+        onClose={showModal}
+      >
         Verify Your Identity
       </NavBar>
 
       {/* Content */}
-      <KycForm title="Documents">
+      <KycForm title="Documents" disableButton={disableButton}>
         {/* KTP */}
 
         <div className="document">
@@ -75,7 +89,12 @@ const Document = ({ location }) => {
             </Link>
           </div>
         )}
+
+        <Dropdown></Dropdown>
       </KycForm>
+
+      {/* Modal */}
+      <Modal modal={modal} setModal={setModal}></Modal>
     </Layout>
   );
 };

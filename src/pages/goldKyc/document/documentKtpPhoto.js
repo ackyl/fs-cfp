@@ -22,7 +22,7 @@ const DocumentKtpPhoto = () => {
   return (
     <Layout>
       {/* NavBar */}
-      <NavBar isBack={true} backUrl="../../verifyKtp">
+      <NavBar isBack={true} backUrl="../document">
         Take Ktp Photo
       </NavBar>
       <div className="documentKtpPhoto">

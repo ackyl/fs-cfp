@@ -8,13 +8,39 @@ import CloseIcon from "@images/icons/close.svg";
 import LockIcon from "@images/icons/lock.svg";
 
 // Main Render
-const NavBar = ({ isNotice, isBack, isClose, backUrl, step, children }) => {
+const NavBar = ({
+  isNotice,
+  isBack,
+  isClose,
+  backUrl,
+  onClose,
+  step,
+  children,
+}) => {
   const showClose = isClose ? isClose : "true";
   const stepProgress = `${(step / 9) * 100}%`;
 
   const stepBar = (
     <div className="navbar__step-bar" style={{ width: stepProgress }}></div>
   );
+
+  const closeRender = () => {
+    if (showClose) {
+      if (onClose) {
+        return (
+          <a onClick={onClose}>
+            <img src={CloseIcon}></img>
+          </a>
+        );
+      } else {
+        return (
+          <Link to="/">
+            <img src={CloseIcon}></img>
+          </Link>
+        );
+      }
+    }
+  };
 
   return (
     <div className={`navbar ${isNotice && "navbar__padding"}`}>
@@ -26,11 +52,7 @@ const NavBar = ({ isNotice, isBack, isClose, backUrl, step, children }) => {
           </Link>
         )}
         <p className="text-title2">{children}</p>
-        {showClose && (
-          <Link to="/">
-            <img src={CloseIcon}></img>
-          </Link>
-        )}
+        {closeRender()}
       </div>
 
       {/* Step Section */}

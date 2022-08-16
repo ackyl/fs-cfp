@@ -6,10 +6,19 @@ import { Link } from "gatsby";
 import Button from "@components/base/Button";
 
 // Main Render
-const KycForm = ({ title, subtitle, contextData, toPage, children }) => {
+const KycForm = ({
+  title,
+  subtitle,
+  contextData,
+  disableButton,
+  toPage,
+  children,
+}) => {
   const onContinue = () => {
     // save context
   };
+
+  const buttonType = disableButton ? "disabled" : "primary";
 
   return (
     <div className="kycform">
@@ -17,7 +26,9 @@ const KycForm = ({ title, subtitle, contextData, toPage, children }) => {
       <p className="text-uiSmall light kycform__subtitle">{subtitle}</p>
       <div className="kycform__form">{children}</div>
       <div className="kycform__button">
-        <Button toPage={toPage}>Continue</Button>
+        <Button toPage={toPage} type={buttonType}>
+          Continue
+        </Button>
       </div>
     </div>
   );

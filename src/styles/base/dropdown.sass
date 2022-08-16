@@ -1,7 +1,13 @@
-.input
+.dropdown-input
   position: relative
   padding-top: 13px
   width: 100%
+  img
+    width: 16px
+    height: 16px
+    position: absolute
+    top: 20px
+    right: 0
 
   & input
     border: 0
@@ -17,9 +23,6 @@
     background-color: transparent
     width: 100%
     padding: 8px 0
-
-  & input:focus
-    border-bottom: 2px solid $uiBluePrimary
 
   & input:not(:placeholder-shown)
     border-bottom: 2px solid $uiLightSecondary
@@ -48,7 +51,51 @@
   & input:required:invalid + label:before
     content: '*'
 
-.input input:focus + label,
-.input input:not(:placeholder-shown) + label
+.dropdown-input input:not(:placeholder-shown) + label
   font-size: 13px
   margin-top: 0
+
+.dropdown-popup
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  height: 100vh
+  align-items: center
+  justify-content: center
+  background: rgba(0, 0, 0, 0.4)
+  &__content
+    animation: animate .4s
+    width: 100%
+    background-color: white
+    position: absolute
+    bottom: 0
+    left: 0
+    border-radius: 8px 8px 0 0
+  &__title
+    display: flex
+    margin: 16px 16px 0
+    text-align: center
+    p
+      flex: 1
+  &__radio
+    border-bottom: 2px solid $uiLightNeutral
+    padding: 16px
+    cursor: pointer
+    label
+      margin-left: 8px
+  &__button
+    padding: 16px
+    display: flex
+    button:last-child
+      margin-left: 4px
+  &.active
+    display: flex
+
+@keyframes animate
+  from
+    transform: translateY(100%)
+  to
+    transform: translateY(0)

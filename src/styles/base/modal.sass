@@ -6,20 +6,12 @@
   bottom: 0
   right: 0
   height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
   align-items: center
   justify-content: center
   background: rgba(0, 0, 0, 0.4)
   &.active
     display: flex
-  &__overlay
-    position: absolute
-    width: 100%
-    height: 100vh
-    background-color: #03121A
-    opacity: 0.5
-    top: 0
-    left: 0
-    z-index: 99
   &__box
     animation: animate 0.3s
     background-color: white

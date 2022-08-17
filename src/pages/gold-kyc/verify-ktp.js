@@ -50,7 +50,7 @@ const VerifyKtp = () => {
         ></Input>
 
         <Button
-          toPage="/goldKyc/document/document"
+          toPage="/gold-kyc/document/document"
           className="verifyKtp__button"
           onClick={() => onSubmit()}
         >

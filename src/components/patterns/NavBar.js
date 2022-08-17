@@ -60,7 +60,7 @@ const NavBar = ({
       {step && (
         <div className="navbar__step">
           <div className="navbar__step-background">{stepBar}</div>
-          <p className="text-captionTiny">Step 1 of 9</p>
+          <p className="text-captionTiny">Step {step} of 9</p>
         </div>
       )}
 

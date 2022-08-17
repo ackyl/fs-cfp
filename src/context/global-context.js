@@ -4,6 +4,7 @@ import React, { createContext, useState } from "react";
 // Initially create the context so it knows what kind of variable inside
 export const GlobalContext = createContext({
   kyc: {
+    selfie: false,
     ktpNumber: "",
     document: {
       fullName: "",
@@ -23,6 +24,7 @@ export const GlobalContext = createContext({
 const Provider = (props) => {
   const [context, saveContext] = useState({
     kyc: {
+      selfie: false,
       ktpNumber: "",
       document: {
         fullName: "",

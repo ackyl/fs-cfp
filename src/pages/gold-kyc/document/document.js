@@ -21,10 +21,26 @@ const Document = ({ location }) => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
 
-  // Get the state of the page from location
-  const ktpPhoto = location.state ? location.state.ktpPhoto : null;
-  const selfiePhoto = location.state ? location.state.selfiePhoto : null;
-  const disableButton = !(ktpPhoto && selfiePhoto);
+  // Get the state of the page from state
+  let isKtpDone = false;
+  let isSelfieDone = false;
+
+  if (context.kyc.document.fullName !== "") {
+    isKtpDone = true;
+    if (context.kyc.selfie) {
+      isSelfieDone = true;
+    }
+  }
+
+  const disableButton = !(isKtpDone && isSelfieDone);
+
+  // Save selfie status
+  const saveSelfie = () => {
+    context.kyc.selfie = true;
+    saveContext({
+      ...context,
+    });
+  };
 
   // Clear page state, if not it will persist
   const isBrowser = typeof window !== "undefined";
@@ -43,21 +59,27 @@ const Document = ({ location }) => {
       <NavBar
         isNotice={true}
         isBack={true}
-        backUrl="../../verifyKtp"
+        backUrl="../../verify-ktp"
         onClose={showModal}
+        step={1}
       >
-        Verify Your Identity
+        Upload Your Documents
       </NavBar>
 
       {/* Content */}
-      <KycForm title="Documents" disableButton={disableButton}>
+      <KycForm
+        title="Documents"
+        disableButton={disableButton}
+        toPage="../../contact/contact"
+        onClick={saveSelfie}
+      >
         {/* KTP */}
 
         <div className="document">
-          <Link to="../documentKtpPhoto">
+          <Link to="../document-photo">
             <p className="text-uiSmall">KTP Photo</p>
             <div className="document__row">
-              <img src={ktpPhoto ? KtpImage : ThumbnailImage}></img>
+              <img src={isKtpDone ? KtpImage : ThumbnailImage}></img>
               <div>
                 <p className="text-uiSmall bold document__row-title">
                   Take KTP Photo
@@ -71,12 +93,12 @@ const Document = ({ location }) => {
         </div>
 
         {/* Selfie */}
-        {ktpPhoto && (
+        {isKtpDone && (
           <div className="document">
-            <Link>
+            <Link to="../document-photo" state={{ selfie: true }}>
               <p className="text-uiSmall">Selfie</p>
               <div className="document__row">
-                <img src={selfiePhoto ? SelfieImage : ThumbnailImage}></img>
+                <img src={isSelfieDone ? SelfieImage : ThumbnailImage}></img>
                 <div>
                   <p className="text-uiSmall bold document__row-title">
                     Take A Photo

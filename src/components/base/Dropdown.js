@@ -10,7 +10,7 @@ import ChevronDown from "@images/icons/chevronDown.svg";
 import CloseIcon from "@images/icons/closeDark.svg";
 
 // Main Render
-const Dropdown = ({ id, options, label, onDropdownSelected }) => {
+const Dropdown = ({ id, options, label, defaultValue, onDropdownSelected }) => {
   // selectedRadio => to update the radio button, selectedInput => to update the dropdown input value
   const [selectedRadio, setSelectedRadio] = useState("");
   const [selectedInput, setSelectedInput] = useState("");
@@ -67,7 +67,7 @@ const Dropdown = ({ id, options, label, onDropdownSelected }) => {
           id={id}
           type="text"
           placeholder=" "
-          value={selectedInput}
+          value={defaultValue ? defaultValue : selectedInput}
           readOnly={true}
         />
         <label>{label}</label>

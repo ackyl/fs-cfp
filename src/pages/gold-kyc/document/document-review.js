@@ -16,16 +16,24 @@ import { GlobalContext } from "@context/global-context";
 import KtpDummy from "@images/ktpDummy.png";
 
 // Main Render
-const DocumentReviewKtp = () => {
+const DocumentReview = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [closeModal, setCloseModal] = useState(false);
   const [formState, setFormState] = useState({
-    fullName: "",
-    gender: "",
-    religion: "",
-    birthPlace: "",
-    birthDate: "",
+    fullName: context.kyc.document.fullName,
+    gender: context.kyc.document.gender,
+    religion: context.kyc.document.religion,
+    birthPlace: context.kyc.document.birthPlace,
+    birthDate: context.kyc.document.birthDate,
   });
+
+  // Save context
+  const setContext = () => {
+    context.kyc.document = formState;
+    saveContext({
+      ...context,
+    });
+  };
 
   // Check whether or not the properties of formState is all filled
   const isFormFilled = Object.values(formState).every(
@@ -56,67 +64,72 @@ const DocumentReviewKtp = () => {
   };
 
   return (
-    <Layout className="documentReviewKtp__bg">
+    <Layout className="documentReview__bg">
       {/* NavBar */}
       <NavBar
         isBack={true}
-        backUrl="../documentKtpPhoto"
+        backUrl="../document-photo"
         onClose={showCloseModal}
       >
         Review Your Details
       </NavBar>
 
       {/* Content */}
-      <div className="documentReviewKtp">
-        <img src={KtpDummy} className="documentReviewKtp__image"></img>
+      <div className="documentReview">
+        <img src={KtpDummy} className="documentReview__image"></img>
         <p className="text-uiSmall">
           Please review your KTP Details and edit if incorrect
         </p>
-        <div className="documentReviewKtp__form">
+        <div className="documentReview__form">
           <Input
             id="fullName"
             label="Full Name"
+            defaultValue={formState.fullName}
             onChange={onInputFilled}
           ></Input>
           <Dropdown
             id="gender"
             label="Gender"
             options={["Male", "Female"]}
+            defaultValue={formState.gender}
             onDropdownSelected={onDropdownSelected}
           ></Dropdown>
           <Dropdown
             id="religion"
             label="Religion"
+            defaultValue={formState.religion}
             options={["Islam", "Christian", "Budhha"]}
             onDropdownSelected={onDropdownSelected}
           ></Dropdown>
           <Input
             id="birthPlace"
             label="Place of Birth"
+            defaultValue={formState.birthPlace}
             onChange={onInputFilled}
           ></Input>
           <Input
             id="birthDate"
             label="Date of Birth"
+            defaultValue={formState.birthDate}
             onChange={onInputFilled}
           ></Input>
         </div>
       </div>
 
       {/* Button */}
-      <div className="documentReviewKtp__buttons">
+      <div className="documentReview__buttons">
         <Button
           type={!isFormFilled ? "disabled" : "secondary"}
-          className="documentReviewKtp__button"
-          toPage="../documentKtpPhoto"
+          className="documentReview__button"
+          toPage="../document-photo"
         >
           Retake Photo
         </Button>
         <Button
           type={!isFormFilled ? "disabled" : "primary"}
-          className="documentReviewKtp__button"
+          className="documentReview__button"
           toPage="../document"
-          state={{ ktpPhoto: true }}
+          onClick={() => setContext()}
         >
           Save Photo Details
         </Button>
@@ -128,4 +141,4 @@ const DocumentReviewKtp = () => {
   );
 };
 
-export default DocumentReviewKtp;
+export default DocumentReview;

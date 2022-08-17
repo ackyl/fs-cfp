@@ -53,7 +53,7 @@ const Document = () => {
   return (
     <Layout>
       {/* NavBar */}
-      <NavBar isNotice={true} isBack={true} backUrl="../../verifyKtp">
+      <NavBar isNotice={true} isBack={true} backUrl="../../verify-ktp">
         Verify Your Identity
       </NavBar>
 

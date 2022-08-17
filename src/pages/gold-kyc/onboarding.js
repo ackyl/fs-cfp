@@ -44,7 +44,7 @@ const Onboarding = () => {
 
       {/* CTA Button */}
       <div className="onboarding__footer">
-        <Button toPage="../verifyKtp" type="cta">
+        <Button toPage="../verify-ktp" type="cta">
           Get Started
         </Button>
       </div>

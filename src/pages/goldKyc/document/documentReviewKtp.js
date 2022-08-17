@@ -27,23 +27,27 @@ const DocumentReviewKtp = () => {
     birthDate: "",
   });
 
+  // Check whether or not the properties of formState is all filled
   const isFormFilled = Object.values(formState).every(
     (x) => !(x === null || x === "")
   );
 
-  const onInputFilled = (event) => {
-    saveFormState(event.target.id, event.target.value);
-  };
-
-  const onDropdownSelected = (id, value) => {
-    saveFormState(id, value);
-  };
-
+  // Save data to form state based on input id
   const saveFormState = (id, value) => {
     formState[id] = value;
     setFormState({
       ...formState,
     });
+  };
+
+  // On input value changed, save it to formState
+  const onInputFilled = (event) => {
+    saveFormState(event.target.id, event.target.value);
+  };
+
+  // On dropdown selected, save it to formState
+  const onDropdownSelected = (id, value) => {
+    saveFormState(id, value);
   };
 
   // Activate Close Modal

@@ -11,8 +11,11 @@ import CloseIcon from "@images/icons/closeDark.svg";
 
 // Main Render
 const Dropdown = ({ id, options, label, onDropdownSelected }) => {
+  // selectedRadio => to update the radio button, selectedInput => to update the dropdown input value
   const [selectedRadio, setSelectedRadio] = useState("");
   const [selectedInput, setSelectedInput] = useState("");
+
+  // to have refernce to the pop up div
   const popUpRef = createRef();
 
   const setState = (option) => {

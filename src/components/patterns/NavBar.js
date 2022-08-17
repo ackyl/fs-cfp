@@ -24,6 +24,7 @@ const NavBar = ({
     <div className="navbar__step-bar" style={{ width: stepProgress }}></div>
   );
 
+  // if onClose, use custom function (ex: show modal)
   const closeRender = () => {
     if (showClose) {
       if (onClose) {
@@ -84,5 +85,6 @@ export default NavBar;
   isBack -> to show back button on the left
   isClose -> to show close button on the right
   backUrl -> to provide link to back
+  onClose -> to replace the default back function
   step -> to provide step below title
 */

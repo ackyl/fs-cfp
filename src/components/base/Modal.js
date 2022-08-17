@@ -8,11 +8,13 @@ import CloseIcon from "@images/icons/closeDark.svg";
 // Main Render
 const Modal = ({ modal, setModal }) => {
   const modalRef = createRef();
+
+  // If modal is true, disable the scroll
   if (modal) {
     document.body.style.overflow = "hidden";
   }
 
-  const closeModal = (e) => {
+  const closeModal = () => {
     modalRef.current.classList.remove("active");
     setModal(false);
     document.body.style.overflow = "auto";
@@ -25,6 +27,7 @@ const Modal = ({ modal, setModal }) => {
     }
   };
 
+  // Click listener
   useEffect(() => {
     document.addEventListener("click", onSelectingOutsideModal, true);
     return () => {
@@ -35,16 +38,21 @@ const Modal = ({ modal, setModal }) => {
   return (
     <div className={`modal ${modal && "active"}`} ref={modalRef}>
       <div className="modal__box">
+        {/* Header */}
         <div className="modal__box-header">
           <p className="text-title1">Leave this page?</p>
           <a className="modal__box-close" onClick={() => closeModal()}>
             <img src={CloseIcon}></img>
           </a>
         </div>
+
+        {/* Text */}
         <p className="text-uiBaseline">
           If you quit during this process, you will lose all the progress you
           have made.
         </p>
+
+        {/* Buttons */}
         <div className="modal__box-buttons">
           <Button
             className="modal__box-button"

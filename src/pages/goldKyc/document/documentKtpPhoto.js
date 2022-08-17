@@ -1,13 +1,10 @@
 // Main Imports// Main Imports
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "gatsby";
 
 // Component Imports
 import Layout from "@components/base/Layout";
 import NavBar from "@components/patterns/NavBar";
-
-// Context Import
-import { GlobalContext } from "@context/global-context";
 
 // Image Import
 import KtpDummy from "@images/ktpPhotoDummy.png";
@@ -17,14 +14,14 @@ import PictureButton from "@images/pictureButton.png";
 
 // Main Render
 const DocumentKtpPhoto = () => {
-  const { context, saveContext } = useContext(GlobalContext);
-
   return (
     <Layout>
       {/* NavBar */}
       <NavBar isBack={true} backUrl="../document">
         Take Ktp Photo
       </NavBar>
+
+      {/* Content */}
       <div className="documentKtpPhoto">
         <img src={KtpDummy}></img>
         <div className="documentKtpPhoto__row">
@@ -48,6 +45,7 @@ const DocumentKtpPhoto = () => {
         </div>
       </div>
 
+      {/* CTA */}
       <Link
         to="../documentReviewKtp"
         state={{

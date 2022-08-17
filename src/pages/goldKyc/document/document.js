@@ -21,11 +21,12 @@ const Document = ({ location }) => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
 
+  // Get the state of the page from location
   const ktpPhoto = location.state ? location.state.ktpPhoto : null;
   const selfiePhoto = location.state ? location.state.selfiePhoto : null;
   const disableButton = !(ktpPhoto && selfiePhoto);
 
-  // Clear page state
+  // Clear page state, if not it will persist
   const isBrowser = typeof window !== "undefined";
   if (isBrowser) {
     window.history.replaceState(null, "");

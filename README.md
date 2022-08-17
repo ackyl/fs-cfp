@@ -1,14 +1,14 @@
-<h1 align="center"> 💸 FS Design CFP 💸</h1>
+<h3 align="center">FS Design Code for Prototyping</h3>
 <p align="center">
-  <a href="https://iridescent-elf-9e2aaf.netlify.app/">Live Website</a> •
-  <a href="#usage">Code Snippets</a> •
-  <a href="#usage">Flight CFP Repo</a>
+  <a href="https://iridescent-elf-9e2aaf.netlify.app/">
+    <h4 align="center">🌐 Live Website 🌐</h4>
+  </a>
 </p>
 <p align='center'>Web-based prototype to help user testing and or concept validation with the advantage of having more interaction capability, non-linear action, and data accurate form experience.</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## 🖥️ Technology Used
+### 🖥️ Technology Used
 
 #### Example
 
@@ -18,37 +18,39 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## ⚒️ Project Infrastructure
+### ⚒️ Project Infrastructure
 
 #### Example
 
-- Example List
-- Example List
+- Components
+  - Base
+  - Patterns
+- Context
+- Pages
+- Styles
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## 🚴‍♂️ Getting Started
+### 🚴‍♂️ Getting Started
 
-**1. Setup your NPM**
-Lorem Ipsum Dolor Si Amet
+**1. Pull This Repository**
 
 ```
-Code Block Example
+git clone https://github.com/ackyl/fs-cfp
 ```
 
 <br>
 
-**2. Setup Your NPM**
-Lorem Ipsum Dolor Si Amet
+**2. Run the Project**
 
 ```
-Code Block Example
+gatsby develop
 ```
+
+<br>
+
+**3. Open localhost:8000 in Browser**
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2 id="credits"> 📜 Credits</h2>
-
-Created by **Ackyl** with love 💕
-
-[![GitHub Badge](https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white)](https://dribbble.com/ackyl)
+![GitHub Badge](http://ForTheBadge.com/images/badges/built-with-love.svg)

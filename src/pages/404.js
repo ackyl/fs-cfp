@@ -1,9 +1,24 @@
 // Main Imports
-import * as React from "react";
-import { Link } from "gatsby";
+import React from "react";
 
+// Component Imports
+import Layout from "@components/base/Layout";
+import Button from "@components/base/Button";
+
+// Image Imports
+import WelcomeImage from "@images/welcome.svg";
+
+// Main Render
 const NotFoundPage = () => {
-  return <Link to="/">Go home</Link>;
+  return (
+    <Layout>
+      <div className="home__center">
+        <p className="text-title1 extra">Seems like you lost your way...</p>
+        <img src={WelcomeImage}></img>
+        <Button toPage="/">Take Me Home</Button>
+      </div>
+    </Layout>
+  );
 };
 
 export default NotFoundPage;

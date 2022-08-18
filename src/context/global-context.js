@@ -27,11 +27,11 @@ const Provider = (props) => {
       selfie: false,
       ktpNumber: "",
       document: {
-        fullName: "",
-        gender: "",
-        religion: "",
-        birthPlace: "",
-        birthDate: "",
+        fullName: "Ackyl",
+        gender: "Male",
+        religion: "Islam",
+        birthPlace: "Jakarta",
+        birthDate: "26/05/1997",
       },
       contact: {
         email: "",

@@ -79,7 +79,7 @@ const Dropdown = ({ id, options, label, defaultValue, onDropdownSelected }) => {
         <div className="dropdown-popup__content">
           {/* Title */}
           <div className="dropdown-popup__title">
-            <p className="text-title2">Marital Status</p>
+            <p className="text-title2">{label}</p>
             <img src={CloseIcon} onClick={() => closePopup()}></img>
           </div>
 

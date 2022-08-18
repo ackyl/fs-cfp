@@ -16,7 +16,7 @@
   &.active
     display: flex
   &__box
-    animation: animate 0.3s
+    animation: animateModal 0.4s
     background-color: white
     opacity: 1
     padding: 16px
@@ -39,8 +39,8 @@
     &-close
       cursor: pointer
 
-@keyframes animate
+@keyframes animateModal
   from
-    transform: scale(0)
+    opacity: 0
   to
-    transform: scale(1)
+    opacity: 1

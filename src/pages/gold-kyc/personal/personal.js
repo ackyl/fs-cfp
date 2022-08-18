@@ -7,6 +7,7 @@ import NavBar from "@components/patterns/NavBar";
 import KycForm from "@components/patterns/KycForm";
 import Modal from "@components/base/Modal";
 import Input from "@components/base/Input";
+import FullDropdown from "@components/base/FullDropdown";
 
 // Context Import
 import { GlobalContext } from "@context/global-context";
@@ -14,7 +15,7 @@ import { GlobalContext } from "@context/global-context";
 // Image Import
 
 // Main Render
-const Contact = () => {
+const Personal = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
   const [formState, setFormState] = useState({
@@ -62,42 +63,19 @@ const Contact = () => {
         isBack={true}
         backUrl="../../document/document"
         onClose={showModal}
-        step={2}
+        step={3}
       >
-        Contact Details
+        Enter Your Personal Data
       </NavBar>
 
       {/* Content */}
       <KycForm
-        title="Documents"
+        title="Basic Information"
+        subtitle="Some fields might be prefilled based on your registered account."
         disableButton={!enableButton}
         onClick={setContext}
-        toPage="../../personal/personal"
       >
-        <Input
-          id="email"
-          label="Email Address"
-          defaultValue={formState.email}
-          onChange={onInputFilled}
-        ></Input>
-        <div className="contact">
-          <Input
-            id="cc"
-            label="Country Code"
-            defaultValue="       +62"
-            disabled
-            flag
-          ></Input>
-          <Input
-            id="phone"
-            label="Mobile Number"
-            defaultValue={formState.phone}
-            onChange={onInputFilled}
-          ></Input>
-        </div>
-        <p className="text-uiSmall contact-footer">
-          Please enter an active phone number for OTP verification
-        </p>
+        <FullDropdown></FullDropdown>
       </KycForm>
 
       {/* Modal */}
@@ -106,4 +84,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Personal;

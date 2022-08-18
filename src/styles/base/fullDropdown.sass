@@ -1,0 +1,40 @@
+.fullDropdown
+  &-popup
+    display: none
+    position: fixed
+    left: 50%
+    transform: translate(-50%, 0)
+    max-width: 420px
+    width: 100%
+    bottom: 0
+    right: 0
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    align-items: center
+    justify-content: center
+    background: $uiLightPrimary
+    z-index: 999
+    animation: animateFull .4s
+    &.active
+      display: block
+  &-option
+    &__header, &__content
+      width: 100%
+      padding: 8px 16px
+    &__header
+      color: $uiDarkSecondary
+      background-color: $uiLightNeutral
+      &.hide
+        display: none
+    &__content
+      color: $uiDarkPrimary
+      background-color: $uiLightPrimary
+      cursor: pointer
+      &.hide
+        display: none
+
+@keyframes animateFull
+  from
+    transform: translate(-50%, 100%)
+  to
+    transform: translate(-50%, 0)

@@ -1,31 +1,38 @@
 // Main Imports
-import React, { createRef, useEffect, useRef } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 
 // Image Imports
 import ChevronDown from "@images/icons/chevronDown.svg";
-import CloseIcon from "@images/icons/closeDark.svg";
 
 // Main Render
-const FullDropdown = () => {
-  const id = "";
-  const defaultValue = "";
-  const selectedInput = "";
-  const label = "Occupation";
-
-  const options = [
-    {
-      header: "Housewife",
-      contents: ["Housewife"],
-    },
-    {
-      header: "Private Employee",
-      contents: ["Professional", "Private Employee"],
-    },
-  ];
+const FullDropdown = ({
+  id,
+  options,
+  label,
+  defaultValue,
+  onDropdownSelected,
+}) => {
+  const [selectedOption, saveSelectedOption] = useState("");
+  options = options ? options : [];
+  // options = [
+  //   {
+  //     header: "Housewife",
+  //     contents: ["Housewife"],
+  //   },
+  //   {
+  //     header: "Private Employee",
+  //     contents: ["Professional", "Private Employee"],
+  //   },
+  // ];
 
   const showPopup = () => {
     popUpRef.current.classList.add("active");
     document.body.style.overflow = "hidden";
+  };
+
+  const closePopup = () => {
+    popUpRef.current.classList.remove("active");
+    document.body.style.overflow = "auto";
   };
 
   // to have refernce to the pop up div
@@ -71,6 +78,15 @@ const FullDropdown = () => {
     });
   };
 
+  // When options are selected
+  const onOptionSelected = (value) => {
+    saveSelectedOption(value);
+    if (onDropdownSelected) {
+      onDropdownSelected(id, selectedOption);
+    }
+    closePopup();
+  };
+
   return (
     <div className="dropdown">
       {/* Input */}
@@ -79,7 +95,7 @@ const FullDropdown = () => {
           id={id}
           type="text"
           placeholder=" "
-          value={defaultValue ? defaultValue : selectedInput}
+          value={defaultValue ? defaultValue : selectedOption}
           readOnly={true}
         />
         <label>{label}</label>
@@ -88,14 +104,29 @@ const FullDropdown = () => {
 
       {/* Popup */}
       <div className="fullDropdown-popup" ref={popUpRef}>
-        <input onChange={(event) => onSearchOption(event)}></input>
+        {/* Header */}
+        <div className="fullDropdown-header">
+          <input
+            onChange={(event) => onSearchOption(event)}
+            placeholder="Search"
+          ></input>
+          <p className="text-title3" onClick={() => closePopup()}>
+            Done
+          </p>
+        </div>
+
+        {/* Options */}
         {options.map((option, i) => (
           <div key={option.header} ref={(el) => (optionsRef.current[i] = el)}>
             <div className="fullDropdown-option__header">
               <p className="text-uiSmall">{option.header}</p>
             </div>
             {option.contents.map((content) => (
-              <div className="fullDropdown-option__content" key={content}>
+              <div
+                className="fullDropdown-option__content"
+                key={content}
+                onClick={() => onOptionSelected(content)}
+              >
                 <p className="text-uiBaseline">{content}</p>
               </div>
             ))}

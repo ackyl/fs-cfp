@@ -17,6 +17,17 @@ export const GlobalContext = createContext({
       email: "",
       phone: "",
     },
+    personal: {
+      address: {
+        address: "",
+        rtrw: "",
+        province: "",
+        city: "",
+        postalCode: "",
+      },
+      mothersName: "",
+      maritalStatus: "",
+    },
   },
 });
 
@@ -34,8 +45,19 @@ const Provider = (props) => {
         birthDate: "26/05/1997",
       },
       contact: {
-        email: "",
-        phone: "",
+        email: "ackylmohamad@gmail.com",
+        phone: "+6281313131313",
+      },
+      personal: {
+        address: {
+          address: "",
+          rtrw: "",
+          province: "",
+          city: "",
+          postalCode: "",
+        },
+        mothersName: "",
+        maritalStatus: "",
       },
     },
   });

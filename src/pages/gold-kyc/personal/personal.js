@@ -7,7 +7,6 @@ import NavBar from "@components/patterns/NavBar";
 import KycForm from "@components/patterns/KycForm";
 import Modal from "@components/base/Modal";
 import Input from "@components/base/Input";
-import FullDropdown from "@components/base/FullDropdown";
 
 // Context Import
 import { GlobalContext } from "@context/global-context";
@@ -61,7 +60,7 @@ const Personal = () => {
       <NavBar
         isNotice={true}
         isBack={true}
-        backUrl="../../document/document"
+        backUrl="../../contact/contact"
         onClose={showModal}
         step={3}
       >
@@ -75,7 +74,18 @@ const Personal = () => {
         disableButton={!enableButton}
         onClick={setContext}
       >
-        <FullDropdown></FullDropdown>
+        <Input
+          id="fullName"
+          label="Full Name"
+          defaultValue={context.kyc.document.fullName}
+          disabled
+        ></Input>
+        <Input
+          id="email"
+          label="Email Address"
+          defaultValue={context.kyc.contact.email}
+          disabled
+        ></Input>
       </KycForm>
 
       {/* Modal */}

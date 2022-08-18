@@ -47,6 +47,7 @@ const Contact = () => {
 
   // Set context when going to the next page
   const setContext = () => {
+    context.kyc.contact.phone = "+62" + context.kyc.contact.phone;
     context.kyc.contact = formState;
     saveContext({
       ...context,
@@ -91,7 +92,7 @@ const Contact = () => {
           <Input
             id="phone"
             label="Mobile Number"
-            defaultValue={formState.phone}
+            defaultValue={formState.phone.replace("+62", "")}
             onChange={onInputFilled}
           ></Input>
         </div>

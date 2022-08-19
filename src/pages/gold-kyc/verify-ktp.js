@@ -37,7 +37,7 @@ const VerifyKtp = () => {
 
       {/* Content */}
       <div className="verifyKtp">
-        <img src={Image}></img>
+        <img src={Image} alt=''></img>
         <p className="text-title1 verifyKtp__title">Enter KTP Number</p>
         <p className="text-subtitle verifyKtp__subtitle">
           Please enter your KTP Number to start or continue your application

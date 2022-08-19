@@ -21,7 +21,7 @@ const Onboarding = () => {
 
       {/* Content */}
       <div className="onboarding">
-        <img src={Image}></img>
+        <img src={Image} alt=''></img>
         <p className="text-uiLarge onboarding__heading">
           Open your account in 7 minutes
         </p>
@@ -29,15 +29,15 @@ const Onboarding = () => {
           We need few details info about you. You will need:
         </p>
         <div className="onboarding__section">
-          <img src={CardIcon}></img>
+          <img src={CardIcon} alt=''></img>
           <p className="text-uiSmall">A government issued KTP photo</p>
         </div>
         <div className="onboarding__section">
-          <img src={CameraIcon}></img>
+          <img src={CameraIcon} alt=''></img>
           <p className="text-uiSmall">A clear and visible selfie</p>
         </div>
         <div className="onboarding__section">
-          <img src={PhoneIcon}></img>
+          <img src={PhoneIcon} alt=''></img>
           <p className="text-uiSmall">Confirm your phone number</p>
         </div>
       </div>

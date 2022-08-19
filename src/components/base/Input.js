@@ -18,7 +18,7 @@ const Input = ({ id, label, defaultValue, disabled, flag, onChange }) => {
         className={disabled && "input-disabled"}
       />
       <label>{label}</label>
-      {flag && <img src={IdFlag} className="input-flag"></img>}
+      {flag && <img src={IdFlag} className="input-flag" alt=''></img>}
     </div>
   );
 };

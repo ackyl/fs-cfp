@@ -30,13 +30,13 @@ const NavBar = ({
       if (onClose) {
         return (
           <a onClick={onClose}>
-            <img src={CloseIcon}></img>
+            <img src={CloseIcon} alt=''></img>
           </a>
         );
       } else {
         return (
           <Link to="/">
-            <img src={CloseIcon}></img>
+            <img src={CloseIcon} alt=''></img>
           </Link>
         );
       }
@@ -49,7 +49,7 @@ const NavBar = ({
       <div className="navbar__header">
         {isBack && (
           <Link to={backUrl}>
-            <img src={BackIcon}></img>
+            <img src={BackIcon} alt=''></img>
           </Link>
         )}
         <p className="text-title2">{children}</p>
@@ -67,7 +67,7 @@ const NavBar = ({
       {/* Notice Section */}
       {isNotice && (
         <div className={`navbar__notice`}>
-          <img src={LockIcon}></img>
+          <img src={LockIcon} alt=''></img>
           <p className="text-uiTiny">
             All details are encrypted to protect your privacy.
           </p>

@@ -1,5 +1,5 @@
 // Main Imports
-import React, { useContext } from "react";
+import React from "react";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -14,7 +14,7 @@ const IndexPage = () => {
     <Layout>
       <div className="home__center">
         <p className="text-title1 extra">FS Design CFP</p>
-        <img src={WelcomeImage}></img>
+        <img src={WelcomeImage} alt=''></img>
         <Button toPage="gold-kyc/onboarding">KYC Process</Button>
       </div>
     </Layout>

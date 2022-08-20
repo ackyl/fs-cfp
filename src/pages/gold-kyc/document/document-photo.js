@@ -22,7 +22,6 @@ const DocumentPhoto = ({ location }) => {
 
   // Get the state of the page from location
   const selfie = location.state ? location.state.selfie : null;
-  const pageState = selfie ? { ktpPhoto: true, selfiePhoto: true } : null;
 
   // Clear page state, if not it will persist
   const isBrowser = typeof window !== "undefined";
@@ -49,16 +48,16 @@ const DocumentPhoto = ({ location }) => {
 
       {/* Content */}
       <div className="documentPhoto">
-        <img src={selfie ? SelfieDummy : KtpDummy}></img>
+        <img src={selfie ? SelfieDummy : KtpDummy} alt=''></img>
         <div className="documentPhoto__column">
           <div className="documentPhoto__row">
-            <img src={InfoIcon}></img>
+            <img src={InfoIcon} alt=''></img>
             <p className="text-uiBaseline">
               For successful verification, let's follow these guidelines:
             </p>
           </div>
           <div className="documentPhoto__row">
-            <img src={CheckmarkIcon}></img>
+            <img src={CheckmarkIcon} alt=''></img>
             <p className="text-uiBaseline">
               {selfie
                 ? "Make sure your face is visible in the circle area and not covered with hair, glasses, hats, etc"
@@ -66,7 +65,7 @@ const DocumentPhoto = ({ location }) => {
             </p>
           </div>
           <div className="documentPhoto__row">
-            <img src={CheckmarkIcon}></img>
+            <img src={CheckmarkIcon} alt=''></img>
             <p className="text-uiBaseline">
               {selfie
                 ? "We need your selfie only to verify your KTP, so don’t worry much!"
@@ -81,7 +80,7 @@ const DocumentPhoto = ({ location }) => {
         to={selfie ? "../document" : "../document-review"}
         onClick={onClickSelfie}
       >
-        <img className="pictureButton" src={PictureButton}></img>
+        <img className="pictureButton" src={PictureButton} alt=''></img>
       </Link>
     </Layout>
   );

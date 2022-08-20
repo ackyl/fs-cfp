@@ -89,7 +89,7 @@ const FullDropdown = ({
           readOnly={true}
         />
         <label>{label}</label>
-        <img src={ChevronDown}></img>
+        <img src={ChevronDown} alt=''></img>
       </div>
 
       {/* Popup */}

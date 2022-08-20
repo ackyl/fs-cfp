@@ -22,7 +22,7 @@ const Modal = ({ modal, setModal }) => {
 
   // If user clicked outside of the modal
   const onSelectingOutsideModal = (event) => {
-    if (modalRef.current == event.target) {
+    if (modalRef.current === event.target) {
       closeModal();
     }
   };
@@ -42,7 +42,7 @@ const Modal = ({ modal, setModal }) => {
         <div className="modal__box-header">
           <p className="text-title1">Leave this page?</p>
           <a className="modal__box-close" onClick={() => closeModal()}>
-            <img src={CloseIcon}></img>
+            <img src={CloseIcon} alt=''></img>
           </a>
         </div>
 

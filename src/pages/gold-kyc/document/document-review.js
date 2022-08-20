@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Link } from "gatsby";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -76,7 +75,7 @@ const DocumentReview = () => {
 
       {/* Content */}
       <div className="documentReview">
-        <img src={KtpDummy} className="documentReview__image"></img>
+        <img src={KtpDummy} className="documentReview__image" alt=''></img>
         <p className="text-uiSmall">
           Please review your KTP Details and edit if incorrect
         </p>

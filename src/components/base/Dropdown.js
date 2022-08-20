@@ -1,6 +1,5 @@
 // Main Imports
 import React, { useState, createRef, useEffect } from "react";
-import ReactDom from "react-dom";
 
 // Component Imports
 import Button from "@components/base/Button";
@@ -44,7 +43,7 @@ const Dropdown = ({ id, options, label, defaultValue, onDropdownSelected }) => {
 
   // If user clicked outside of the dropdown
   const onSelectingOutsidePopup = (event) => {
-    if (popUpRef.current == event.target) {
+    if (popUpRef.current === event.target) {
       closePopup();
     }
   };
@@ -71,7 +70,7 @@ const Dropdown = ({ id, options, label, defaultValue, onDropdownSelected }) => {
           readOnly={true}
         />
         <label>{label}</label>
-        <img src={ChevronDown}></img>
+        <img src={ChevronDown} alt=''></img>
       </div>
 
       {/* Pop Up */}
@@ -80,7 +79,7 @@ const Dropdown = ({ id, options, label, defaultValue, onDropdownSelected }) => {
           {/* Title */}
           <div className="dropdown-popup__title">
             <p className="text-title2">{label}</p>
-            <img src={CloseIcon} onClick={() => closePopup()}></img>
+            <img src={CloseIcon} onClick={() => closePopup()} alt=''></img>
           </div>
 
           {/* Radio */}

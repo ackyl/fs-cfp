@@ -14,7 +14,7 @@ const NotFoundPage = () => {
     <Layout>
       <div className="home__center">
         <p className="text-title1 extra">Seems like you lost your way...</p>
-        <img src={WelcomeImage}></img>
+        <img src={WelcomeImage} alt=''></img>
         <Button toPage="/">Take Me Home</Button>
       </div>
     </Layout>

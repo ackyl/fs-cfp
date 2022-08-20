@@ -1,0 +1,19 @@
+.popUpWindow
+  max-width: 420px
+  display: none
+  background-color: white
+  position: fixed
+  height: 100vh
+  width: 100%
+  top: 0
+  animation: animatePopUp 0.4s
+  &.active
+    display: block
+  &-content
+    padding: 16px
+
+@keyframes animatePopUp
+  from
+    transform: translate(0, 100%)
+  to
+    transform: translate(0, 0)

@@ -1,2 +1,21 @@
 .personal
   width: 100%
+  &-same
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    img
+      width: 16px
+      height: 16px
+      margin-right: 16px
+    p
+      color: $uiDarkSecondary
+  &-address
+    > div
+      margin-bottom: 16px
+    &__row
+      display: flex
+      > div
+        flex: 1
+      > div:last-child
+        margin-left: 16px

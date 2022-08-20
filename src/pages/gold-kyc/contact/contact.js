@@ -52,7 +52,6 @@ const Contact = () => {
     saveContext({
       ...context,
     });
-    console.log(context);
   };
 
   return (

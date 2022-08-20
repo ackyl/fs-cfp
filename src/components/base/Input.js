@@ -5,9 +5,18 @@ import React from "react";
 import IdFlag from "@images/icons/idFlag.svg";
 
 // Main Render
-const Input = ({ id, label, defaultValue, disabled, flag, onChange }) => {
+const Input = ({
+  id,
+  label,
+  defaultValue,
+  disabled,
+  flag,
+  onChange,
+  onClick,
+  footer,
+}) => {
   return (
-    <div className="input">
+    <div className="input" onClick={onClick}>
       <input
         id={id}
         type="text"
@@ -15,10 +24,11 @@ const Input = ({ id, label, defaultValue, disabled, flag, onChange }) => {
         defaultValue={defaultValue}
         onChange={onChange}
         disabled={disabled}
-        className={disabled && "input-disabled"}
+        className={disabled && !onClick ? "input-disabled" : ""}
       />
       <label>{label}</label>
       {flag && <img src={IdFlag} className="input-flag"></img>}
+      {footer && <p className="text-uiSmall">{footer}</p>}
     </div>
   );
 };

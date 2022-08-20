@@ -14,16 +14,6 @@ const FullDropdown = ({
 }) => {
   const [selectedOption, saveSelectedOption] = useState("");
   options = options ? options : [];
-  // options = [
-  //   {
-  //     header: "Housewife",
-  //     contents: ["Housewife"],
-  //   },
-  //   {
-  //     header: "Private Employee",
-  //     contents: ["Professional", "Private Employee"],
-  //   },
-  // ];
 
   const showPopup = () => {
     popUpRef.current.classList.add("active");
@@ -82,7 +72,7 @@ const FullDropdown = ({
   const onOptionSelected = (value) => {
     saveSelectedOption(value);
     if (onDropdownSelected) {
-      onDropdownSelected(id, selectedOption);
+      onDropdownSelected(id, value);
     }
     closePopup();
   };
@@ -138,3 +128,14 @@ const FullDropdown = ({
 };
 
 export default FullDropdown;
+
+// options = [
+//   {
+//     header: "Housewife",
+//     contents: ["Housewife"],
+//   },
+//   {
+//     header: "Private Employee",
+//     contents: ["Professional", "Private Employee"],
+//   },
+// ];

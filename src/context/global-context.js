@@ -28,6 +28,7 @@ export const GlobalContext = createContext({
       mothersName: "",
       maritalStatus: "",
     },
+    savedUntilPage: "",
   },
 });
 
@@ -38,15 +39,15 @@ const Provider = (props) => {
       selfie: false,
       ktpNumber: "",
       document: {
-        fullName: "Ackyl",
-        gender: "Male",
-        religion: "Islam",
-        birthPlace: "Jakarta",
-        birthDate: "26/05/1997",
+        fullName: "",
+        gender: "",
+        religion: "",
+        birthPlace: "",
+        birthDate: "",
       },
       contact: {
-        email: "ackylmohamad@gmail.com",
-        phone: "+6281313131313",
+        email: "",
+        phone: "",
       },
       personal: {
         address: {
@@ -59,6 +60,7 @@ const Provider = (props) => {
         mothersName: "",
         maritalStatus: "",
       },
+      savedUntilPage: 0,
     },
   });
 

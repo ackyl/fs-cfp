@@ -37,6 +37,7 @@ const Document = ({ location }) => {
   // Save selfie status
   const saveSelfie = () => {
     context.kyc.selfie = true;
+    context.kyc.savedUntilPage = 2;
     saveContext({
       ...context,
     });
@@ -79,7 +80,7 @@ const Document = ({ location }) => {
           <Link to="../document-photo">
             <p className="text-uiSmall">KTP Photo</p>
             <div className="document__row">
-              <img src={isKtpDone ? KtpImage : ThumbnailImage} alt=''></img>
+              <img src={isKtpDone ? KtpImage : ThumbnailImage} alt=""></img>
               <div>
                 <p className="text-uiSmall bold document__row-title">
                   Take KTP Photo
@@ -98,7 +99,10 @@ const Document = ({ location }) => {
             <Link to="../document-photo" state={{ selfie: true }}>
               <p className="text-uiSmall">Selfie</p>
               <div className="document__row">
-                <img src={isSelfieDone ? SelfieImage : ThumbnailImage} alt=''></img>
+                <img
+                  src={isSelfieDone ? SelfieImage : ThumbnailImage}
+                  alt=""
+                ></img>
                 <div>
                   <p className="text-uiSmall bold document__row-title">
                     Take A Photo
@@ -114,7 +118,7 @@ const Document = ({ location }) => {
       </KycForm>
 
       {/* Modal */}
-      <Modal modal={modal} setModal={setModal}></Modal>
+      <Modal modal={modal} setModal={setModal} savePage={1}></Modal>
     </Layout>
   );
 };

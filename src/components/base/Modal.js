@@ -1,12 +1,16 @@
 // Main Imports
-import React, { createRef, useEffect } from "react";
+import React, { createRef, useEffect, useContext } from "react";
 
 // Component Imports
 import Button from "@components/base/Button";
 import CloseIcon from "@images/icons/closeDark.svg";
 
+// Context Import
+import { GlobalContext } from "@context/global-context";
+
 // Main Render
-const Modal = ({ modal, setModal }) => {
+const Modal = ({ modal, setModal, savePage }) => {
+  const { context, saveContext } = useContext(GlobalContext);
   const modalRef = createRef();
 
   // If modal is true, disable the scroll
@@ -18,6 +22,16 @@ const Modal = ({ modal, setModal }) => {
     modalRef.current.classList.remove("active");
     setModal(false);
     document.body.style.overflow = "auto";
+  };
+
+  const closeModalWhileSaving = () => {
+    if (savePage) {
+      context.kyc.savedUntilPage = savePage;
+      saveContext({
+        ...context,
+      });
+    }
+    closeModal();
   };
 
   // If user clicked outside of the modal
@@ -42,7 +56,7 @@ const Modal = ({ modal, setModal }) => {
         <div className="modal__box-header">
           <p className="text-title1">Leave this page?</p>
           <a className="modal__box-close" onClick={() => closeModal()}>
-            <img src={CloseIcon} alt=''></img>
+            <img src={CloseIcon} alt=""></img>
           </a>
         </div>
 
@@ -58,7 +72,7 @@ const Modal = ({ modal, setModal }) => {
             className="modal__box-button"
             type="warning"
             toPage="/"
-            onClick={() => closeModal()}
+            onClick={() => closeModalWhileSaving()}
           >
             Leave
           </Button>

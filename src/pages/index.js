@@ -1,5 +1,5 @@
 // Main Imports
-import React from "react";
+import React, { useContext } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
@@ -14,13 +14,18 @@ import WealthIcon from "@images/icons/wealth.svg";
 import InfoIcon from "@images/icons/infoColor.svg";
 import ChevronIcon from "@images/icons/chevronRight.svg";
 
+// Context Import
+import { GlobalContext } from "@context/global-context";
+
 // Main Render
 const IndexPage = () => {
+  const { context, saveContext } = useContext(GlobalContext);
+  const savedUntilPage = context.kyc.savedUntilPage;
+
   return (
     <Layout>
       <NavBar isWhite>Gold</NavBar>
       <div className="home-content">
-        {/* <img src={BgImage} className="home-bg" alt=""></img> */}
         <StaticImage
           src="../../static/images/homeBg.png"
           alt=""
@@ -40,7 +45,14 @@ const IndexPage = () => {
               <img src={BoardImage} alt=""></img>
             </div>
             <div className="home-row">
-              <Button type="cta" toPage="gold-kyc/onboarding">
+              <Button
+                type="cta"
+                toPage={
+                  savedUntilPage > 0
+                    ? "gold-kyc/save-for-later"
+                    : "gold-kyc/onboarding"
+                }
+              >
                 Continue Verification
               </Button>
               <div>

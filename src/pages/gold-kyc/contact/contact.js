@@ -49,6 +49,7 @@ const Contact = () => {
   const setContext = () => {
     context.kyc.contact.phone = "+62" + context.kyc.contact.phone;
     context.kyc.contact = formState;
+    context.kyc.savedUntilPage = 3;
     saveContext({
       ...context,
     });
@@ -101,7 +102,7 @@ const Contact = () => {
       </KycForm>
 
       {/* Modal */}
-      <Modal modal={modal} setModal={setModal}></Modal>
+      <Modal modal={modal} setModal={setModal} savePage={2}></Modal>
     </Layout>
   );
 };

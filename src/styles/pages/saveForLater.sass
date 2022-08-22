@@ -1,0 +1,38 @@
+.saveForLater
+  padding: 16px
+  > p
+    margin: 16px 0
+  &-row
+    position: relative
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    > p
+      margin-left: 8px
+  &-circle
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    &__done
+      background-color: $uiGreenPrimary
+    &__remaining
+      background-color: $uiBluePrimary
+
+.saveForLater-row::before
+  position: absolute
+  content: ""
+  background-color: #687176
+  width: 2px
+  border-radius: 8px
+  height: 8px
+  left: 10px
+  top: 24px
+  transform: translate(-50%, 0)
+  z-index: 2
+
+.saveForLater-row:last-child::before
+  content: none

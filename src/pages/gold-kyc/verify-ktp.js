@@ -1,5 +1,5 @@
 // Main Imports
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
@@ -14,13 +14,16 @@ import { GlobalContext } from "@context/global-context";
 // Main Render
 const VerifyKtp = () => {
   const { context, saveContext } = useContext(GlobalContext);
+  const [state, saveState] = useState(context.kyc.ktpNumber ?? null);
+
+  const enableButton = state;
 
   const onChange = (event) => {
-    const userValue = event.target.value;
-    context.kyc.ktpNumber = userValue;
+    saveState(event.target.value);
   };
 
   function onSubmit() {
+    context.kyc.ktpNumber = state;
     saveContext({
       ...context,
     });
@@ -54,6 +57,7 @@ const VerifyKtp = () => {
           toPage="/gold-kyc/document/document"
           className="verifyKtp__button"
           onClick={() => onSubmit()}
+          type={enableButton ? "primary" : "disabled"}
         >
           Continue
         </Button>

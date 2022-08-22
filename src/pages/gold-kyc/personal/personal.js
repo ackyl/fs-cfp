@@ -76,6 +76,7 @@ const Personal = () => {
   // Set context when going to the next page
   const setContext = () => {
     context.kyc.contact = formState;
+    context.kyc.savedUntilPage = 4;
     saveContext({
       ...context,
     });
@@ -202,7 +203,7 @@ const Personal = () => {
       </PopUpWindow>
 
       {/* Modal */}
-      <Modal modal={modal} setModal={setModal}></Modal>
+      <Modal modal={modal} setModal={setModal} savePage={3}></Modal>
     </Layout>
   );
 };

@@ -18,7 +18,7 @@ const NavBar = ({
   step,
   children,
 }) => {
-  const showClose = isClose !== null ? isClose : "true";
+  const showClose = isClose !== undefined ? isClose : true;
   const stepProgress = `${(step / 9) * 100}%`;
 
   const stepBar = (

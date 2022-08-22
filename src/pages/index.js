@@ -8,7 +8,6 @@ import Button from "@components/base/Button";
 import NavBar from "@components/patterns/NavBar";
 
 // Image Imports
-import BgImage from "@images/homeBg.png";
 import BoardImage from "@images/icons/board.svg";
 import PegadaianImage from "@images/pegadaian.png";
 import WealthIcon from "@images/icons/wealth.svg";

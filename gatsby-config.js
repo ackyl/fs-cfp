@@ -43,10 +43,18 @@ module.exports = {
         failOn: `none`,
         // deprecated options and their defaults:
         base64Width: 20,
-        forceBase64Format: `png`, // valid formats: png,jpg,webp
+        forceBase64Format: `webp`, // valid formats: png,jpg,webp
         useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
         stripMetadata: true,
         defaultQuality: 50,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        id: 3117772,
+        sv: 6,
       },
     },
   ],

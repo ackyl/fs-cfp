@@ -1,5 +1,6 @@
 // Main Imports
 import React, { useContext } from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -9,9 +10,6 @@ import Input from "@components/base/Input";
 
 // Context Import
 import { GlobalContext } from "@context/global-context";
-
-// Image Imports
-import Image from "@images/kycKtp.png";
 
 // Main Render
 const VerifyKtp = () => {
@@ -37,7 +35,10 @@ const VerifyKtp = () => {
 
       {/* Content */}
       <div className="verifyKtp">
-        <img src={Image} alt=''></img>
+        <StaticImage
+          src="../../../static/images/kycKtp.png"
+          alt=""
+        ></StaticImage>
         <p className="text-title1 verifyKtp__title">Enter KTP Number</p>
         <p className="text-subtitle verifyKtp__subtitle">
           Please enter your KTP Number to start or continue your application

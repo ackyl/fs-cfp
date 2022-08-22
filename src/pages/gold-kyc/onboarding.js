@@ -1,5 +1,6 @@
 // Main Imports
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -7,7 +8,6 @@ import NavBar from "@components/patterns/NavBar";
 import Button from "@components/base/Button";
 
 // Image Imports
-import Image from "@images/kycOnboarding.png";
 import CameraIcon from "@images/icons/camera.svg";
 import CardIcon from "@images/icons/card.svg";
 import PhoneIcon from "@images/icons/phone.svg";
@@ -23,7 +23,10 @@ const Onboarding = () => {
 
       {/* Content */}
       <div className="onboarding">
-        <img src={Image} alt=""></img>
+        <StaticImage
+          src="../../../static/images/kycOnboarding.png"
+          alt=""
+        ></StaticImage>
         <p className="text-uiLarge onboarding__heading">
           Open your account in 7 minutes
         </p>

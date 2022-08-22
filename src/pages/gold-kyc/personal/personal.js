@@ -85,8 +85,6 @@ const Personal = () => {
     setPopup(false);
   };
 
-  console.log(fullAddress);
-
   return (
     <Layout>
       {/* NavBar */}

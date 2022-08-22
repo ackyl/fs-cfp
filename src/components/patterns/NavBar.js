@@ -12,12 +12,13 @@ const NavBar = ({
   isNotice,
   isBack,
   isClose,
+  isWhite,
   backUrl,
   onClose,
   step,
   children,
 }) => {
-  const showClose = isClose ? isClose : "true";
+  const showClose = isClose !== null ? isClose : "true";
   const stepProgress = `${(step / 9) * 100}%`;
 
   const stepBar = (
@@ -30,13 +31,13 @@ const NavBar = ({
       if (onClose) {
         return (
           <a onClick={onClose}>
-            <img src={CloseIcon} alt=''></img>
+            <img src={CloseIcon} alt=""></img>
           </a>
         );
       } else {
         return (
           <Link to="/">
-            <img src={CloseIcon} alt=''></img>
+            <img src={CloseIcon} alt=""></img>
           </Link>
         );
       }
@@ -44,12 +45,16 @@ const NavBar = ({
   };
 
   return (
-    <div className={`navbar ${isNotice && "navbar__padding"}`}>
+    <div
+      className={`navbar ${isNotice && "navbar__padding"} ${
+        isWhite && "navbar__white"
+      }`}
+    >
       {/* Title Section */}
       <div className="navbar__header">
         {isBack && (
           <Link to={backUrl}>
-            <img src={BackIcon} alt=''></img>
+            <img src={BackIcon} alt=""></img>
           </Link>
         )}
         <p className="text-title2">{children}</p>
@@ -67,7 +72,7 @@ const NavBar = ({
       {/* Notice Section */}
       {isNotice && (
         <div className={`navbar__notice`}>
-          <img src={LockIcon} alt=''></img>
+          <img src={LockIcon} alt=""></img>
           <p className="text-uiTiny">
             All details are encrypted to protect your privacy.
           </p>

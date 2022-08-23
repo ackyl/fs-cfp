@@ -1,5 +1,7 @@
 // Main Imports
 import React from "react";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -18,6 +20,12 @@ const CompleteGoldKyc = () => {
           We will verify your details within 60 minutes (during working days).
           Please make sure you can be contacted during this time.
         </p>
+        <Link to="/" className="completegoldkyc-home">
+          <StaticImage
+            src="../../../static/images/icons/home.svg"
+            alt=""
+          ></StaticImage>
+        </Link>
       </div>
     </Layout>
   );

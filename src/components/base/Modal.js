@@ -27,7 +27,11 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
   const closeModalWhileSaving = () => {
     if (savePage) {
       if (formState) {
-        context.kyc.personal = formState;
+        if (savePage === 2) {
+          context.kyc.contact = formState;
+        } else if (savePage === 3) {
+          context.kyc.personal = formState;
+        }
       }
       context.kyc.savedUntilPage = savePage;
       saveContext({

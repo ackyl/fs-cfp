@@ -102,7 +102,12 @@ const Contact = () => {
       </KycForm>
 
       {/* Modal */}
-      <Modal modal={modal} setModal={setModal} savePage={2}></Modal>
+      <Modal
+        modal={modal}
+        setModal={setModal}
+        savePage={2}
+        formState={formState}
+      ></Modal>
     </Layout>
   );
 };

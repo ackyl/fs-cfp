@@ -22,6 +22,28 @@ const IndexPage = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const savedUntilPage = context.kyc.savedUntilPage;
 
+  const renderImage = () => {
+    if (savedUntilPage > 0) {
+      return (
+        <StaticImage
+          src="../../static/images/icons/board.svg"
+          alt=""
+          className="home-board"
+          width={80}
+        ></StaticImage>
+      );
+    } else {
+      return (
+        <StaticImage
+          src="../../static/images/icons/mf.svg"
+          alt=""
+          className="home-board"
+          width={100}
+        ></StaticImage>
+      );
+    }
+  };
+
   return (
     <Layout>
       <NavBar isWhite>Gold</NavBar>
@@ -33,16 +55,29 @@ const IndexPage = () => {
           className="home-bg"
         ></StaticImage>
 
-        {/* Absolute */}
-        <div className="home-absolute">
-          <p className="text-title2">Hi, Rama!</p>
+        {/* Top */}
+        <div className="home-top">
+          <p
+            className={`text-title2 ${savedUntilPage == 0 && "home-top__hide"}`}
+          >
+            Hi, Rama!
+          </p>
           <div className="home-hero">
             <div className="home-row">
-              <p className="text-uiBaseline">
-                We're almost there! Complete your data verification to start
-                saving.
-              </p>
-              <img src={BoardImage} alt=""></img>
+              <div>
+                <p className="text-uiBaseline extra">
+                  {savedUntilPage > 0
+                    ? "We're almost there! Complete your data verification to start saving."
+                    : "Start saving in Gold now!"}
+                </p>
+                {savedUntilPage == 0 && (
+                  <p className="text-uiSmall home-row__subtitle">
+                    Easy and affordable, starts from Rp 10.000!{" "}
+                  </p>
+                )}
+              </div>
+
+              {renderImage()}
             </div>
             <div className="home-row">
               <Button
@@ -53,15 +88,17 @@ const IndexPage = () => {
                     : "gold-kyc/onboarding"
                 }
               >
-                Continue Verification
+                {savedUntilPage > 0
+                  ? "Continue Verification"
+                  : "Let's Get Started!"}
               </Button>
               <div>
                 <p className="text-captionMicro">Powered By</p>
-                <img
-                  src={PegadaianImage}
-                  className="home-pegadaian"
+                <StaticImage
+                  src="../../static/images/pegadaian.png"
                   alt=""
-                ></img>
+                  className="home-pegadaian"
+                ></StaticImage>
               </div>
             </div>
           </div>

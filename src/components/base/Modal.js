@@ -9,7 +9,7 @@ import CloseIcon from "@images/icons/closeDark.svg";
 import { GlobalContext } from "@context/global-context";
 
 // Main Render
-const Modal = ({ modal, setModal, savePage }) => {
+const Modal = ({ modal, setModal, savePage, formState }) => {
   const { context, saveContext } = useContext(GlobalContext);
   const modalRef = createRef();
 
@@ -26,10 +26,14 @@ const Modal = ({ modal, setModal, savePage }) => {
 
   const closeModalWhileSaving = () => {
     if (savePage) {
+      if (formState) {
+        context.kyc.personal = formState;
+      }
       context.kyc.savedUntilPage = savePage;
       saveContext({
         ...context,
       });
+      console.log(context);
     }
     closeModal();
   };
@@ -54,7 +58,7 @@ const Modal = ({ modal, setModal, savePage }) => {
       <div className="modal__box">
         {/* Header */}
         <div className="modal__box-header">
-          <p className="text-title1">Leave this page?</p>
+          <p className="text-title1">Are you sure?</p>
           <a className="modal__box-close" onClick={() => closeModal()}>
             <img src={CloseIcon} alt=""></img>
           </a>
@@ -62,8 +66,7 @@ const Modal = ({ modal, setModal, savePage }) => {
 
         {/* Text */}
         <p className="text-uiBaseline">
-          If you quit during this process, you will lose all the progress you
-          have made.
+          We'll save your progress. You can continue the application anytime.
         </p>
 
         {/* Buttons */}
@@ -74,10 +77,10 @@ const Modal = ({ modal, setModal, savePage }) => {
             toPage="/"
             onClick={() => closeModalWhileSaving()}
           >
-            Leave
+            Yes, save & quit
           </Button>
           <Button className="modal__box-button" onClick={() => closeModal()}>
-            Cancel
+            No, continue
           </Button>
         </div>
       </div>

@@ -26,7 +26,9 @@ const Button = ({ toPage, type, children, className, state, onClick }) => {
       break;
   }
 
-  if (toPage) {
+  const isEnabled = buttonType !== "button-disabled";
+
+  if (toPage && isEnabled) {
     return (
       <Link
         className={`button ${buttonType} ${className}`}
@@ -39,7 +41,10 @@ const Button = ({ toPage, type, children, className, state, onClick }) => {
     );
   } else {
     return (
-      <button className={`button ${buttonType} ${className}`} onClick={onClick}>
+      <button
+        className={`button ${buttonType} ${className}`}
+        onClick={isEnabled ? onClick : null}
+      >
         {children}
       </button>
     );

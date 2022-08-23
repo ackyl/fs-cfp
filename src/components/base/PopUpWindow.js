@@ -6,7 +6,7 @@ import Navbar from "@components/patterns/NavBar";
 import Button from "@components/base/Button";
 
 // Main Render
-const PopUpWindow = ({ isActive, onClose, children }) => {
+const PopUpWindow = ({ isActive, onClose, children, enableButton }) => {
   const windowRef = useRef();
 
   const showPopUp = () => {
@@ -29,7 +29,12 @@ const PopUpWindow = ({ isActive, onClose, children }) => {
       <Navbar onClose={closePopup}>Current Address</Navbar>
       <div className="popUpWindow-content">
         {children}
-        <Button onClick={closePopup}>Done</Button>
+        <Button
+          type={enableButton ? "primary" : "disabled"}
+          onClick={closePopup}
+        >
+          Done
+        </Button>
       </div>
     </div>
   );

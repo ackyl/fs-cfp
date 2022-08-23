@@ -1,17 +1,3 @@
-### Todo
-
-1. Landing Page
-2. Save For Later Page
-3. Hotjar
-4. Persist Context
-
-### Notes
-
-1. Cukup ambil 5 district misal jakarta doang karena nanti user bisa diminta untuk select address dimana
-2. Kill app behavior expectation from ame -> Idealnya dari ame dibikin persist buat both refresh sama close (kill app)
-3. Pop up behavior expectation from ame -> partial or validated first (nanti senin)
-4. Helper text -> pop up behavior akan dikabarin senin, abis itu baru buat helper text kalo dibutuhkan
-
 ### KYC Steps
 
 1. Documents

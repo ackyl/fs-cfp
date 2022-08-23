@@ -37,13 +37,13 @@ const Provider = (props) => {
   const [context, saveContext] = useState({
     kyc: {
       selfie: false,
-      ktpNumber: "",
+      ktpNumber: "1000199250333",
       document: {
-        fullName: "",
-        gender: "",
-        religion: "",
-        birthPlace: "",
-        birthDate: "",
+        fullName: "Dian Reza",
+        gender: "Male",
+        religion: "Islam",
+        birthPlace: "Jakarta",
+        birthDate: "30/10/1990",
       },
       contact: {
         email: "",

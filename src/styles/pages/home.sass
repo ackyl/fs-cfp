@@ -1,17 +1,20 @@
 .home
   &-bg
     width: 100%
-    margin-bottom: 24px
+    position: absolute
+    top: 0
+    z-index: 0
   &-content
     position: relative
-  &-absolute
-    position: absolute
-    top: 16px
-    left: 0
-    padding: 0 16px
+  &-top
+    position: relative
+    padding: 16px
+    z-index: 99
+    &__hide
+      opacity: 0
     > p
-      color: white
       margin-bottom: 8px
+      color: white
   &-hero
     background-color: white
     color: black
@@ -21,10 +24,10 @@
   &-row
     display: flex
     align-items: center
-    > img
+    &__subtitle
+      color: $uiDarkSecondary
+    > div:last-child
       margin: 0 16px
-    > div
-      margin-left: 16px
   &-row:first-child
     margin-bottom: 16px
   &-pegadaian

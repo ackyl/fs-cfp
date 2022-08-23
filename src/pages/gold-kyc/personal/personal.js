@@ -22,31 +22,24 @@ const Personal = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
   const [popup, setPopup] = useState(false);
-  const [formState, setFormState] = useState({
-    address: {
-      address: "",
-      rtrw: "",
-      province: "",
-      city: "",
-      postalCode: "",
-    },
-    mothersName: "",
-    maritalStatus: "",
-  });
-
-  const fullAddress =
-    formState.address.address +
-    formState.address.rtrw +
-    formState.address.province +
-    formState.address.city +
-    formState.address.postalCode;
+  const [formState, setFormState] = useState(context.kyc.personal);
 
   // Check whether or not the properties of formState is all filled
   const enableButton = Object.values(formState).every(
     (x) => !(x === null || x === "")
   );
 
-  // Save data to form state based on input id
+  const enableFullAddressButton = Object.values(formState.address).every(
+    (x) => !(x === null || x === "")
+  );
+
+  const [fullAddress, setFullAddress] = useState(
+    enableFullAddressButton
+      ? `${formState.address.address}, ${formState.address.rtrw}, ${formState.address.province}, ${formState.address.city}, ${formState.address.postalCode}`
+      : null
+  );
+
+  // Save data to form state based on input id, onChange
   const saveFormState = (id, value) => {
     if (id.includes("-")) {
       formState["address"][id.replace("-", "")] = value;
@@ -75,7 +68,7 @@ const Personal = () => {
 
   // Set context when going to the next page
   const setContext = () => {
-    context.kyc.contact = formState;
+    context.kyc.personal = formState;
     context.kyc.savedUntilPage = 4;
     saveContext({
       ...context,
@@ -83,6 +76,10 @@ const Personal = () => {
   };
 
   const closePopUpWindow = () => {
+    console.log(formState);
+    setFullAddress(
+      `${formState.address.address}, ${formState.address.rtrw}, ${formState.address.province}, ${formState.address.city}, ${formState.address.postalCode}`
+    );
     setPopup(false);
   };
 
@@ -152,7 +149,11 @@ const Personal = () => {
       </KycForm>
 
       {/* Pop Up Window */}
-      <PopUpWindow isActive={popup} onClose={closePopUpWindow}>
+      <PopUpWindow
+        isActive={popup}
+        onClose={closePopUpWindow}
+        enableButton={enableFullAddressButton}
+      >
         <div className="personal-address">
           <Input
             id="-address"
@@ -203,7 +204,12 @@ const Personal = () => {
       </PopUpWindow>
 
       {/* Modal */}
-      <Modal modal={modal} setModal={setModal} savePage={3}></Modal>
+      <Modal
+        modal={modal}
+        setModal={setModal}
+        savePage={3}
+        formState={formState}
+      ></Modal>
     </Layout>
   );
 };

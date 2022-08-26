@@ -108,7 +108,7 @@ const IndexPage = () => {
         <div className="home-card">
           <img src={WealthIcon} alt=""></img>
           <div className="home-card__subtitle">
-            <p className="text-title2">Gold Price Monitor</p>
+            <p className="text-title2">Price Monitor</p>
             <p className="text-uiSmall">Tap here for Gold price update</p>
           </div>
           <img src={ChevronIcon} alt=""></img>

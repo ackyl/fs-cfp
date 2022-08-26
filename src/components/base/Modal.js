@@ -62,7 +62,7 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
       <div className="modal__box">
         {/* Header */}
         <div className="modal__box-header">
-          <p className="text-title1">Are you sure?</p>
+          <p className="text-title1">Leave application?</p>
           <a className="modal__box-close" onClick={() => closeModal()}>
             <img src={CloseIcon} alt=""></img>
           </a>
@@ -70,7 +70,8 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
 
         {/* Text */}
         <p className="text-uiBaseline">
-          We'll save your progress. You can continue the application anytime.
+          Your application will be saved as a draft for the next 3 months, and
+          you can continue anytime in that period.
         </p>
 
         {/* Buttons */}
@@ -81,10 +82,10 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
             toPage="/"
             onClick={() => closeModalWhileSaving()}
           >
-            Yes, save & quit
+            Yes, Leave
           </Button>
           <Button className="modal__box-button" onClick={() => closeModal()}>
-            No, continue
+            No, Continue
           </Button>
         </div>
       </div>

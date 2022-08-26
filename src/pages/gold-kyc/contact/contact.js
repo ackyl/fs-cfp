@@ -70,7 +70,7 @@ const Contact = () => {
 
       {/* Content */}
       <KycForm
-        title="Documents"
+        title="Contact Details"
         disableButton={!enableButton}
         onClick={setContext}
         toPage="../../personal/personal"

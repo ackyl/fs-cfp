@@ -44,7 +44,7 @@ const VerifyKtp = () => {
         ></StaticImage>
         <p className="text-title1 verifyKtp__title">Enter KTP Number</p>
         <p className="text-subtitle verifyKtp__subtitle">
-          Please enter your KTP Number to start or continue your application
+          Verify your identity to start or continue your application.
         </p>
 
         <Input

@@ -83,10 +83,12 @@ const Document = ({ location }) => {
               <img src={isKtpDone ? KtpImage : ThumbnailImage} alt=""></img>
               <div>
                 <p className="text-uiSmall bold document__row-title">
-                  Take KTP Photo
+                  {isKtpDone ? "KTP Photo Uploaded" : "Take KTP Photo"}
                 </p>
                 <p className="text-uiSmall">
-                  So your application can be verified quickly.
+                  {isKtpDone
+                    ? "Your details will be saved for verification purposes."
+                    : "So we can verify your application."}
                 </p>
               </div>
             </div>
@@ -105,10 +107,12 @@ const Document = ({ location }) => {
                 ></img>
                 <div>
                   <p className="text-uiSmall bold document__row-title">
-                    Take A Photo
+                    {isSelfieDone ? "Selfie Uploaded" : "Take a Selfie"}
                   </p>
                   <p className="text-uiSmall">
-                    So your details can be verified quickly.
+                    {isSelfieDone
+                      ? "Your photo will be saved for verification purposes."
+                      : "So we can make sure that the applicant is really you."}
                   </p>
                 </div>
               </div>

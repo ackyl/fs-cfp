@@ -15,10 +15,9 @@ const CompleteGoldKyc = () => {
     <Layout>
       <div className="completegoldkyc">
         <img src={Image} alt=""></img>
-        <p className="text-uiLarge">Processing Your Registration</p>
+        <p className="text-uiLarge">Your Application Has Been Submitted</p>
         <p className="text-uiSmall">
-          We will verify your details within 60 minutes (during working days).
-          Please make sure you can be contacted during this time.
+          We will verify your details within 30 minutes (during working hours).
         </p>
         <Link to="/" className="completegoldkyc-home">
           <StaticImage

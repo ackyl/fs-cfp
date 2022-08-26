@@ -48,27 +48,27 @@ const DocumentPhoto = ({ location }) => {
 
       {/* Content */}
       <div className="documentPhoto">
-        <img src={selfie ? SelfieDummy : KtpDummy} alt=''></img>
+        <img src={selfie ? SelfieDummy : KtpDummy} alt=""></img>
         <div className="documentPhoto__column">
           <div className="documentPhoto__row">
-            <img src={InfoIcon} alt=''></img>
+            <img src={InfoIcon} alt=""></img>
             <p className="text-uiBaseline">
               For successful verification, let's follow these guidelines:
             </p>
           </div>
           <div className="documentPhoto__row">
-            <img src={CheckmarkIcon} alt=''></img>
+            <img src={CheckmarkIcon} alt=""></img>
             <p className="text-uiBaseline">
               {selfie
-                ? "Make sure your face is visible in the circle area and not covered with hair, glasses, hats, etc"
+                ? "Make sure your face is clearly visible in the circle area."
                 : "KTP needs to be original and not the scanned, copied, or uploaded version"}
             </p>
           </div>
           <div className="documentPhoto__row">
-            <img src={CheckmarkIcon} alt=''></img>
+            <img src={CheckmarkIcon} alt=""></img>
             <p className="text-uiBaseline">
               {selfie
-                ? "We need your selfie only to verify your KTP, so don’t worry much!"
+                ? "We only need your selfie to verify your KTP, so don’t worry much!"
                 : "KTP should fit the frame, not cropped, details and picture are clear"}
             </p>
           </div>
@@ -80,7 +80,7 @@ const DocumentPhoto = ({ location }) => {
         to={selfie ? "../document" : "../document-review"}
         onClick={onClickSelfie}
       >
-        <img className="pictureButton" src={PictureButton} alt=''></img>
+        <img className="pictureButton" src={PictureButton} alt=""></img>
       </Link>
     </Layout>
   );

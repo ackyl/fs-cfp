@@ -47,10 +47,10 @@ const SaveForLater = () => {
         ></StaticImage>
         <p className="text-uiLarge extra">Welcome back, Dian!</p>
         <p className="text-uiSmall">
-          We have prefilled your data from your previous verified application.
-          You are one step away from completing the application!
+          You have a saved application draft. Simply continue where you left off
+          to complete the application!
         </p>
-        <p className="text-uiSmall bold">Progress Left</p>
+        <p className="text-uiSmall bold">Application Progress</p>
         <div>
           {finishedPages.map((page) => (
             <div className="saveForLater-row" key={page}>
@@ -72,7 +72,7 @@ const SaveForLater = () => {
             </div>
           ))}
         </div>
-        <Button toPage={toPage}>I'm Ready</Button>
+        <Button toPage={toPage}>Continue Application</Button>
       </div>
     </Layout>
   );

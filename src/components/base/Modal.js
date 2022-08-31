@@ -37,7 +37,6 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
       saveContext({
         ...context,
       });
-      console.log(context);
     }
     closeModal();
   };

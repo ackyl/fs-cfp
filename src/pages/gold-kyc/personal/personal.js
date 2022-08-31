@@ -76,7 +76,6 @@ const Personal = () => {
   };
 
   const closePopUpWindow = () => {
-    console.log(formState);
     setFullAddress(
       `${formState.address.address}, ${formState.address.rtrw}, ${formState.address.province}, ${formState.address.city}, ${formState.address.postalCode}`
     );

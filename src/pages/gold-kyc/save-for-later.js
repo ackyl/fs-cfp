@@ -13,12 +13,19 @@ import { GlobalContext } from "@context/global-context";
 // Main Render
 const SaveForLater = () => {
   const { context, saveContext } = useContext(GlobalContext);
-  const savedUntilPage = context.kyc.savedUntilPage - 1;
-  const listOfPages = ["Documents", "Contacts", "Personal Data"];
+  const listOfPages = [
+    "Documents",
+    "Contacts",
+    "Personal Data",
+    "Occupation Details",
+    "Source of Funds",
+    "Bank Account",
+    "Pegadaian Location",
+    "Review Application",
+    "Submit Application",
+  ];
 
-  const finishedPages = listOfPages.slice(0, savedUntilPage);
-  const remainingPages = listOfPages.slice(savedUntilPage);
-
+  let savedUntilPage = context.kyc.savedUntilPage - 1;
   let toPage = "/";
 
   switch (savedUntilPage) {
@@ -31,9 +38,16 @@ const SaveForLater = () => {
     case 2:
       toPage = "../personal/personal";
       break;
+    case 3:
+      savedUntilPage = 9;
+      toPage = "../complete";
+      break;
     default:
       break;
   }
+
+  const finishedPages = listOfPages.slice(0, savedUntilPage);
+  const remainingPages = listOfPages.slice(savedUntilPage);
 
   return (
     <Layout>

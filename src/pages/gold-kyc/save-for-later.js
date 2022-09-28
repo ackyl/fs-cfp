@@ -12,8 +12,8 @@ import { GlobalContext } from "@context/global-context";
 
 // Main Render
 const SaveForLater = () => {
-  const { context, saveContext } = useContext(GlobalContext);
-  const savedUntilPage = context.kyc.savedUntilPage - 1;
+  const { context } = useContext(GlobalContext);
+  const savedUntilPage = context.goldKyc.savedUntilPage - 1;
   const listOfPages = ["Documents", "Contacts", "Personal Data"];
 
   const finishedPages = listOfPages.slice(0, savedUntilPage);

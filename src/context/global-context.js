@@ -1,67 +1,16 @@
 // Main Imports
 import React, { createContext, useState } from "react";
+import goldKyc from "./data/data-gold-kyc.json";
 
 // Initially create the context so it knows what kind of variable inside
 export const GlobalContext = createContext({
-  kyc: {
-    selfie: false,
-    ktpNumber: "",
-    document: {
-      fullName: "",
-      gender: "",
-      religion: "",
-      birthPlace: "",
-      birthDate: "",
-    },
-    contact: {
-      email: "",
-      phone: "",
-    },
-    personal: {
-      address: {
-        address: "",
-        rtrw: "",
-        province: "",
-        city: "",
-        postalCode: "",
-      },
-      mothersName: "",
-      maritalStatus: "",
-    },
-    savedUntilPage: "",
-  },
+  goldKyc,
 });
 
 // Provide simple ways to update the context, default value is provided here
 const Provider = (props) => {
   const [context, saveContext] = useState({
-    kyc: {
-      selfie: false,
-      ktpNumber: "1000199250333",
-      document: {
-        fullName: "Dian Reza",
-        gender: "Male",
-        religion: "Islam",
-        birthPlace: "Jakarta",
-        birthDate: "30/10/1990",
-      },
-      contact: {
-        email: "",
-        phone: "",
-      },
-      personal: {
-        address: {
-          address: "",
-          rtrw: "",
-          province: "",
-          city: "",
-          postalCode: "",
-        },
-        mothersName: "",
-        maritalStatus: "",
-      },
-      savedUntilPage: 0,
-    },
+    goldKyc,
   });
 
   return (

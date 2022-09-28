@@ -19,16 +19,16 @@ const DocumentReview = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [closeModal, setCloseModal] = useState(false);
   const [formState, setFormState] = useState({
-    fullName: context.kyc.document.fullName,
-    gender: context.kyc.document.gender,
-    religion: context.kyc.document.religion,
-    birthPlace: context.kyc.document.birthPlace,
-    birthDate: context.kyc.document.birthDate,
+    fullName: context.goldKyc.document.fullName,
+    gender: context.goldKyc.document.gender,
+    religion: context.goldKyc.document.religion,
+    birthPlace: context.goldKyc.document.birthPlace,
+    birthDate: context.goldKyc.document.birthDate,
   });
 
   // Save context
   const setContext = () => {
-    context.kyc.document = formState;
+    context.goldKyc.document = formState;
     saveContext({
       ...context,
     });
@@ -75,7 +75,7 @@ const DocumentReview = () => {
 
       {/* Content */}
       <div className="documentReview">
-        <img src={KtpDummy} className="documentReview__image" alt=''></img>
+        <img src={KtpDummy} className="documentReview__image" alt=""></img>
         <p className="text-uiSmall">
           Please review your KTP Details and edit if incorrect
         </p>

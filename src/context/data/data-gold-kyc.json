@@ -1,0 +1,27 @@
+{
+  "selfie": false,
+  "ktpNumber": "1000199250333",
+  "document": {
+    "fullName": "Dian Reza",
+    "gender": "Male",
+    "religion": "Islam",
+    "birthPlace": "Jakarta",
+    "birthDate": "30/10/1990"
+  },
+  "contact": {
+    "email": "",
+    "phone": ""
+  },
+  "personal": {
+    "address": {
+      "address": "",
+      "rtrw": "",
+      "province": "",
+      "city": "",
+      "postalCode": ""
+    },
+    "mothersName": "",
+    "maritalStatus": ""
+  },
+  "savedUntilPage": 0
+}

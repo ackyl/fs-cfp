@@ -18,8 +18,8 @@ const Contact = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
   const [formState, setFormState] = useState({
-    email: context.kyc.contact.email,
-    phone: context.kyc.contact.phone,
+    email: context.goldKyc.contact.email,
+    phone: context.goldKyc.contact.phone,
   });
 
   // Check whether or not the properties of formState is all filled
@@ -47,9 +47,9 @@ const Contact = () => {
 
   // Set context when going to the next page
   const setContext = () => {
-    context.kyc.contact.phone = "+62" + context.kyc.contact.phone;
-    context.kyc.contact = formState;
-    context.kyc.savedUntilPage = 3;
+    context.goldKyc.contact.phone = "+62" + context.goldKyc.contact.phone;
+    context.goldKyc.contact = formState;
+    context.goldKyc.savedUntilPage = 3;
     saveContext({
       ...context,
     });

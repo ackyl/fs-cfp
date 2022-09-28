@@ -22,7 +22,7 @@ const Personal = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
   const [popup, setPopup] = useState(false);
-  const [formState, setFormState] = useState(context.kyc.personal);
+  const [formState, setFormState] = useState(context.goldKyc.personal);
 
   // Check whether or not the properties of formState is all filled
   const enableButton = Object.values(formState).every(
@@ -68,8 +68,8 @@ const Personal = () => {
 
   // Set context when going to the next page
   const setContext = () => {
-    context.kyc.personal = formState;
-    context.kyc.savedUntilPage = 4;
+    context.goldKyc.personal = formState;
+    context.goldKyc.savedUntilPage = 4;
     saveContext({
       ...context,
     });
@@ -107,13 +107,13 @@ const Personal = () => {
         <Input
           id="fullName"
           label="Full Name"
-          defaultValue={context.kyc.document.fullName}
+          defaultValue={context.goldKyc.document.fullName}
           disabled
         ></Input>
         <Input
           id="email"
           label="Email Address"
-          defaultValue={context.kyc.contact.email}
+          defaultValue={context.goldKyc.contact.email}
           disabled
         ></Input>
 
@@ -135,14 +135,14 @@ const Personal = () => {
         <Input
           id="mothersName"
           label="Mother's Full Name"
-          defaultValue={context.kyc.personal.mothersName}
+          defaultValue={context.goldKyc.personal.mothersName}
           onChange={onInputFilled}
         ></Input>
 
         <Dropdown
           id="maritalStatus"
           label="Marital Status"
-          defaultValue={context.kyc.personal.maritalStatus}
+          defaultValue={context.goldKyc.personal.maritalStatus}
           options={["Single", "Married", "Widowed", "Divorced"]}
           onDropdownSelected={onDropdownSelected}
         ></Dropdown>
@@ -158,21 +158,21 @@ const Personal = () => {
           <Input
             id="-address"
             label="Address"
-            defaultValue={context.kyc.personal.address.address}
+            defaultValue={context.goldKyc.personal.address.address}
             footer="Please include street name and number"
             onChange={onInputFilled}
           ></Input>
           <Input
             id="-rtrw"
             label="RT/RW"
-            defaultValue={context.kyc.personal.address.rtrw}
+            defaultValue={context.goldKyc.personal.address.rtrw}
             onChange={onInputFilled}
           ></Input>
           <div className="personal-address__row">
             <FullDropdown
               id="-province"
               label="Province"
-              defaultValue={context.kyc.personal.address.province}
+              defaultValue={context.goldKyc.personal.address.province}
               options={[
                 {
                   header: "J",
@@ -184,7 +184,7 @@ const Personal = () => {
             <FullDropdown
               id="-city"
               label="City"
-              defaultValue={context.kyc.personal.address.city}
+              defaultValue={context.goldKyc.personal.address.city}
               options={[
                 {
                   header: "J",
@@ -197,7 +197,7 @@ const Personal = () => {
           <Input
             id="-postalCode"
             label="Postal Code"
-            defaultValue={context.kyc.personal.address.postalCode}
+            defaultValue={context.goldKyc.personal.address.postalCode}
             onChange={onInputFilled}
           ></Input>
         </div>

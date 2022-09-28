@@ -32,7 +32,7 @@ const DocumentPhoto = ({ location }) => {
   // When user finish the selfie
   const onClickSelfie = () => {
     if (selfie) {
-      context.kyc.selfie = true;
+      context.goldKyc.selfie = true;
       saveContext({
         ...context,
       });

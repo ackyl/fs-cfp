@@ -8,8 +8,6 @@ import Button from "@components/base/Button";
 import NavBar from "@components/patterns/NavBar";
 
 // Image Imports
-import BoardImage from "@images/icons/board.svg";
-import PegadaianImage from "@images/pegadaian.png";
 import WealthIcon from "@images/icons/wealth.svg";
 import InfoIcon from "@images/icons/infoColor.svg";
 import ChevronIcon from "@images/icons/chevronRight.svg";
@@ -19,8 +17,8 @@ import { GlobalContext } from "@context/global-context";
 
 // Main Render
 const IndexPage = () => {
-  const { context, saveContext } = useContext(GlobalContext);
-  const savedUntilPage = context.kyc.savedUntilPage;
+  const { context } = useContext(GlobalContext);
+  const savedUntilPage = context.goldKyc.savedUntilPage;
 
   const renderImage = () => {
     if (savedUntilPage > 0) {
@@ -58,7 +56,9 @@ const IndexPage = () => {
         {/* Top */}
         <div className="home-top">
           <p
-            className={`text-title2 ${savedUntilPage == 0 && "home-top__hide"}`}
+            className={`text-title2 ${
+              savedUntilPage === 0 && "home-top__hide"
+            }`}
           >
             Hi, Rama!
           </p>
@@ -70,7 +70,7 @@ const IndexPage = () => {
                     ? "We're almost there! Complete your data verification to start saving."
                     : "Start saving in Gold now!"}
                 </p>
-                {savedUntilPage == 0 && (
+                {savedUntilPage === 0 && (
                   <p className="text-uiSmall home-row__subtitle">
                     Easy and affordable, starts from Rp 10.000!{" "}
                   </p>

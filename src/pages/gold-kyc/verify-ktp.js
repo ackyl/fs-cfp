@@ -14,7 +14,7 @@ import { GlobalContext } from "@context/global-context";
 // Main Render
 const VerifyKtp = () => {
   const { context, saveContext } = useContext(GlobalContext);
-  const [state, saveState] = useState(context.kyc.ktpNumber ?? null);
+  const [state, saveState] = useState(context.goldKyc.ktpNumber ?? null);
 
   const enableButton = state;
 
@@ -23,7 +23,7 @@ const VerifyKtp = () => {
   };
 
   function onSubmit() {
-    context.kyc.ktpNumber = state;
+    context.goldKyc.ktpNumber = state;
     saveContext({
       ...context,
     });
@@ -49,7 +49,7 @@ const VerifyKtp = () => {
 
         <Input
           label="KTP Number"
-          defaultValue={context.kyc.ktpNumber}
+          defaultValue={context.goldKyc.ktpNumber}
           onChange={onChange}
         ></Input>
 

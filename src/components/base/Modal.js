@@ -28,12 +28,12 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
     if (savePage) {
       if (formState) {
         if (savePage === 2) {
-          context.kyc.contact = formState;
+          context.goldKyc.contact = formState;
         } else if (savePage === 3) {
-          context.kyc.personal = formState;
+          context.goldKyc.personal = formState;
         }
       }
-      context.kyc.savedUntilPage = savePage;
+      context.goldKyc.savedUntilPage = savePage;
       saveContext({
         ...context,
       });

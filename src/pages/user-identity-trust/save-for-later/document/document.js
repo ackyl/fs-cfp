@@ -25,9 +25,9 @@ const Document = ({ location }) => {
   let isKtpDone = false;
   let isSelfieDone = false;
 
-  if (context.goldKyc.document.fullName !== "") {
+  if (context.userIdentityTrust.saveForLater.document.fullName !== "") {
     isKtpDone = true;
-    if (context.goldKyc.selfie) {
+    if (context.userIdentityTrust.saveForLater.selfie) {
       isSelfieDone = true;
     }
   }
@@ -36,8 +36,8 @@ const Document = ({ location }) => {
 
   // Save selfie status
   const saveSelfie = () => {
-    context.goldKyc.selfie = true;
-    context.goldKyc.savedUntilPage = 2;
+    context.userIdentityTrust.saveForLater.selfie = true;
+    context.userIdentityTrust.saveForLater.savedUntilPage = 2;
     saveContext({
       ...context,
     });

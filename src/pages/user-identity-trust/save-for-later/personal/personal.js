@@ -14,15 +14,14 @@ import FullDropdown from "@components/base/FullDropdown";
 // Context Import
 import { GlobalContext } from "@context/global-context";
 
-// Image Import
-import ActiveImage from "@images/active.png";
-
 // Main Render
 const Personal = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
   const [popup, setPopup] = useState(false);
-  const [formState, setFormState] = useState(context.goldKyc.personal);
+  const [formState, setFormState] = useState(
+    context.userIdentityTrust.saveForLater.personal
+  );
 
   // Check whether or not the properties of formState is all filled
   const enableButton = Object.values(formState).every(
@@ -68,8 +67,8 @@ const Personal = () => {
 
   // Set context when going to the next page
   const setContext = () => {
-    context.goldKyc.personal = formState;
-    context.goldKyc.savedUntilPage = 4;
+    context.userIdentityTrust.saveForLater.personal = formState;
+    context.userIdentityTrust.saveForLater.savedUntilPage = 4;
     saveContext({
       ...context,
     });
@@ -107,13 +106,15 @@ const Personal = () => {
         <Input
           id="fullName"
           label="Full Name"
-          defaultValue={context.goldKyc.document.fullName}
+          defaultValue={
+            context.userIdentityTrust.saveForLater.document.fullName
+          }
           disabled
         ></Input>
         <Input
           id="email"
           label="Email Address"
-          defaultValue={context.goldKyc.contact.email}
+          defaultValue={context.userIdentityTrust.saveForLater.contact.email}
           disabled
         ></Input>
 
@@ -128,21 +129,25 @@ const Personal = () => {
         ></Input>
 
         <div className="personal-same">
-          <img src={ActiveImage}></img>
+          <img src="/images/active.png" alt="" />
           <p className="text-uiBaseline">Same with my current address</p>
         </div>
 
         <Input
           id="mothersName"
           label="Mother's Full Name"
-          defaultValue={context.goldKyc.personal.mothersName}
+          defaultValue={
+            context.userIdentityTrust.saveForLater.personal.mothersName
+          }
           onChange={onInputFilled}
         ></Input>
 
         <Dropdown
           id="maritalStatus"
           label="Marital Status"
-          defaultValue={context.goldKyc.personal.maritalStatus}
+          defaultValue={
+            context.userIdentityTrust.saveForLater.personal.maritalStatus
+          }
           options={["Single", "Married", "Widowed", "Divorced"]}
           onDropdownSelected={onDropdownSelected}
         ></Dropdown>
@@ -158,21 +163,27 @@ const Personal = () => {
           <Input
             id="-address"
             label="Address"
-            defaultValue={context.goldKyc.personal.address.address}
+            defaultValue={
+              context.userIdentityTrust.saveForLater.personal.address.address
+            }
             footer="Please include street name and number"
             onChange={onInputFilled}
           ></Input>
           <Input
             id="-rtrw"
             label="RT/RW"
-            defaultValue={context.goldKyc.personal.address.rtrw}
+            defaultValue={
+              context.userIdentityTrust.saveForLater.personal.address.rtrw
+            }
             onChange={onInputFilled}
           ></Input>
           <div className="personal-address__row">
             <FullDropdown
               id="-province"
               label="Province"
-              defaultValue={context.goldKyc.personal.address.province}
+              defaultValue={
+                context.userIdentityTrust.saveForLater.personal.address.province
+              }
               options={[
                 {
                   header: "J",
@@ -184,7 +195,9 @@ const Personal = () => {
             <FullDropdown
               id="-city"
               label="City"
-              defaultValue={context.goldKyc.personal.address.city}
+              defaultValue={
+                context.userIdentityTrust.saveForLater.personal.address.city
+              }
               options={[
                 {
                   header: "J",
@@ -197,7 +210,9 @@ const Personal = () => {
           <Input
             id="-postalCode"
             label="Postal Code"
-            defaultValue={context.goldKyc.personal.address.postalCode}
+            defaultValue={
+              context.userIdentityTrust.saveForLater.personal.address.postalCode
+            }
             onChange={onInputFilled}
           ></Input>
         </div>

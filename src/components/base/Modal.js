@@ -28,12 +28,12 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
     if (savePage) {
       if (formState) {
         if (savePage === 2) {
-          context.goldKyc.contact = formState;
+          context.userIdentityTrust.saveForLater.contact = formState;
         } else if (savePage === 3) {
-          context.goldKyc.personal = formState;
+          context.userIdentityTrust.saveForLater.personal = formState;
         }
       }
-      context.goldKyc.savedUntilPage = savePage;
+      context.userIdentityTrust.saveForLater.savedUntilPage = savePage;
       saveContext({
         ...context,
       });
@@ -79,7 +79,7 @@ const Modal = ({ modal, setModal, savePage, formState }) => {
           <Button
             className="modal__box-button"
             type="warning"
-            toPage="/"
+            toPage="/user-identity-trust/save-for-later/home"
             onClick={() => closeModalWhileSaving()}
           >
             Yes, Leave

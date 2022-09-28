@@ -11,15 +11,13 @@ import Input from "@components/base/Input";
 // Context Import
 import { GlobalContext } from "@context/global-context";
 
-// Image Import
-
 // Main Render
 const Contact = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [modal, setModal] = useState(false);
   const [formState, setFormState] = useState({
-    email: context.goldKyc.contact.email,
-    phone: context.goldKyc.contact.phone,
+    email: context.userIdentityTrust.saveForLater.contact.email,
+    phone: context.userIdentityTrust.saveForLater.contact.phone,
   });
 
   // Check whether or not the properties of formState is all filled
@@ -47,9 +45,10 @@ const Contact = () => {
 
   // Set context when going to the next page
   const setContext = () => {
-    context.goldKyc.contact.phone = "+62" + context.goldKyc.contact.phone;
-    context.goldKyc.contact = formState;
-    context.goldKyc.savedUntilPage = 3;
+    context.userIdentityTrust.saveForLater.contact.phone =
+      "+62" + context.userIdentityTrust.saveForLater.contact.phone;
+    context.userIdentityTrust.saveForLater.contact = formState;
+    context.userIdentityTrust.saveForLater.savedUntilPage = 3;
     saveContext({
       ...context,
     });

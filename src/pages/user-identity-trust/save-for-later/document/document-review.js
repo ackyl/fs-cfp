@@ -19,16 +19,16 @@ const DocumentReview = () => {
   const { context, saveContext } = useContext(GlobalContext);
   const [closeModal, setCloseModal] = useState(false);
   const [formState, setFormState] = useState({
-    fullName: context.goldKyc.document.fullName,
-    gender: context.goldKyc.document.gender,
-    religion: context.goldKyc.document.religion,
-    birthPlace: context.goldKyc.document.birthPlace,
-    birthDate: context.goldKyc.document.birthDate,
+    fullName: context.userIdentityTrust.saveForLater.document.fullName,
+    gender: context.userIdentityTrust.saveForLater.document.gender,
+    religion: context.userIdentityTrust.saveForLater.document.religion,
+    birthPlace: context.userIdentityTrust.saveForLater.document.birthPlace,
+    birthDate: context.userIdentityTrust.saveForLater.document.birthDate,
   });
 
   // Save context
   const setContext = () => {
-    context.goldKyc.document = formState;
+    context.userIdentityTrust.saveForLater.document = formState;
     saveContext({
       ...context,
     });

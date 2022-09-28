@@ -1,6 +1,5 @@
 // Main Imports
 import React, { useContext } from "react";
-import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -13,7 +12,8 @@ import { GlobalContext } from "@context/global-context";
 // Main Render
 const SaveForLater = () => {
   const { context } = useContext(GlobalContext);
-  const savedUntilPage = context.goldKyc.savedUntilPage - 1;
+  const savedUntilPage =
+    context.userIdentityTrust.saveForLater.savedUntilPage - 1;
   const listOfPages = ["Documents", "Contacts", "Personal Data"];
 
   const finishedPages = listOfPages.slice(0, savedUntilPage);
@@ -41,10 +41,7 @@ const SaveForLater = () => {
         Apply for Gold
       </NavBar>
       <div className="saveForLater">
-        <StaticImage
-          src="../../../static/images/hello.png"
-          alt=""
-        ></StaticImage>
+        <img src="/images/hello.png" width="100%" alt="" />
         <p className="text-uiLarge extra">Welcome back, Dian!</p>
         <p className="text-uiSmall">
           You have a saved application draft. Simply continue where you left off
@@ -55,10 +52,7 @@ const SaveForLater = () => {
           {finishedPages.map((page) => (
             <div className="saveForLater-row" key={page}>
               <div className="saveForLater-circle saveForLater-circle__done">
-                <StaticImage
-                  src="../../../static/images/icons/checkmark.svg"
-                  alt=""
-                ></StaticImage>
+                <img src="/images/icons/checkmark.svg" alt="" />
               </div>
               <p className="text-uiSmall">{page}</p>
             </div>

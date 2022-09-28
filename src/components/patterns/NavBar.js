@@ -36,7 +36,7 @@ const NavBar = ({
         );
       } else {
         return (
-          <Link to="/">
+          <Link to="./user-identity-trust/home">
             <img src={CloseIcon} alt=""></img>
           </Link>
         );

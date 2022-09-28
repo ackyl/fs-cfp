@@ -1,6 +1,5 @@
 // Main Imports
 import React, { useContext, useState } from "react";
-import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
 import Layout from "@components/base/Layout";
@@ -14,7 +13,9 @@ import { GlobalContext } from "@context/global-context";
 // Main Render
 const VerifyKtp = () => {
   const { context, saveContext } = useContext(GlobalContext);
-  const [state, saveState] = useState(context.goldKyc.ktpNumber ?? null);
+  const [state, saveState] = useState(
+    context.userIdentityTrust.saveForLater.ktpNumber ?? null
+  );
 
   const enableButton = state;
 
@@ -23,7 +24,7 @@ const VerifyKtp = () => {
   };
 
   function onSubmit() {
-    context.goldKyc.ktpNumber = state;
+    context.userIdentityTrust.saveForLater.ktpNumber = state;
     saveContext({
       ...context,
     });
@@ -38,10 +39,7 @@ const VerifyKtp = () => {
 
       {/* Content */}
       <div className="verifyKtp">
-        <StaticImage
-          src="../../../static/images/kycKtp.png"
-          alt=""
-        ></StaticImage>
+        <img src="/images/kycKtp.png" alt="" />
         <p className="text-title1 verifyKtp__title">Enter KTP Number</p>
         <p className="text-subtitle verifyKtp__subtitle">
           Verify your identity to start or continue your application.
@@ -49,12 +47,12 @@ const VerifyKtp = () => {
 
         <Input
           label="KTP Number"
-          defaultValue={context.goldKyc.ktpNumber}
+          defaultValue={context.userIdentityTrust.saveForLater.ktpNumber}
           onChange={onChange}
         ></Input>
 
         <Button
-          toPage="/gold-kyc/document/document"
+          toPage="../document/document"
           className="verifyKtp__button"
           onClick={() => onSubmit()}
           type={enableButton ? "primary" : "disabled"}

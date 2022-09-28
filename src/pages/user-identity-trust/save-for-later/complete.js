@@ -1,13 +1,9 @@
 // Main Imports
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 // Component Imports
 import Layout from "@components/base/Layout";
-
-// Image Imports
-import Image from "@images/complete.png";
 
 // Main Render
 const CompleteGoldKyc = () => {
@@ -20,10 +16,7 @@ const CompleteGoldKyc = () => {
           We will verify your details within 30 minutes (during working hours).
         </p>
         <Link to="/" className="completegoldkyc-home">
-          <StaticImage
-            src="../../../static/images/icons/home.svg"
-            alt=""
-          ></StaticImage>
+          <img src="/images/icons/home.svg" alt=""></img>
         </Link>
       </div>
     </Layout>

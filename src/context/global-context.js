@@ -1,16 +1,18 @@
 // Main Imports
 import React, { createContext, useState } from "react";
-import goldKyc from "./data/data-gold-kyc.json";
+
+// Data Imports
+import saveForLater from "@data/user-identity-trust/save-for-later.json";
 
 // Initially create the context so it knows what kind of variable inside
 export const GlobalContext = createContext({
-  goldKyc,
+  userIndentityTrust: { saveForLater },
 });
 
 // Provide simple ways to update the context, default value is provided here
 const Provider = (props) => {
   const [context, saveContext] = useState({
-    goldKyc,
+    userIdentityTrust: { saveForLater },
   });
 
   return (
